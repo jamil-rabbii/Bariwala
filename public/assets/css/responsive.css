@@ -1,0 +1,159 @@
+/* Medium Layout: 970px.  */
+ 
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	
+	.submit a {
+		margin-left: 59%;
+	}
+	.single-banner {
+		padding: 200px 150px;
+	}
+	.single-banner h1 {
+		font-size: 58px;
+	}
+	.search-home {
+		padding: 8px 32px;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet Layout: 768px.  750px*/
+ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.submit a {
+		margin-left: 44%;
+		display: inline-block;
+	}
+	.single-banner {
+		padding: 140px 20px;
+	}
+	.single-banner h1 {
+		font-size: 50px;
+	}
+	.info-btm-right {
+		margin-top: -55px;
+	}
+	.footer-top {
+		padding: 80px 100px;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Layout: 320px. */
+ 
+@media only screen and (max-width: 767px) {
+
+	.logo {
+		width: 100%;
+		text-align: center;
+	}
+	.logo a {
+		font-size: 48px;
+	}
+	.submit a {
+		display: inline-block;
+		margin-top: 40px;
+		float: right;
+	}	
+	.submit a {
+		margin-left: 0;
+	}
+	.single-banner {
+		padding: 80px 10px;
+	}
+	.single-banner h2 {
+		font-size: 17px;
+	}
+	.single-banner h1 {
+		font-size: 38px;
+		margin: 10px 0;
+	}
+	.single-banner h3 {
+		font-size: 18px;
+	}
+	.house-info-right {
+		margin: -20px 0 0 0;
+	}
+	.house-info-right h3 {
+		text-align: left;
+	}
+	.info-btm-right {
+		margin-top: -60px;
+	}
+	.footer-top img {
+		width: 150px;
+	}
+	.footer-top {
+		padding: 60px 10px;
+	}
+	.footer-down p {
+		font-size: 12px;
+		padding: 10px 10px 5px 0;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Wide Mobile Layout: 480px. */
+ 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.single-banner h1 {
+	font-size: 44px;
+}
+.house-info-right {
+	margin: 28px 0 0 0;
+	float: right;
+}
+.house-info-right h3 {
+	font-size: 32px;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
