@@ -17,6 +17,9 @@
 
 // Home //
 
-Route::get('/','HomeController@index');
+Route::get('/','FrontViewController@index');
 
 //Route::get('/home','HomeController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
