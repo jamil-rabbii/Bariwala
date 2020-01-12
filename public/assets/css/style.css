@@ -1,0 +1,324 @@
+*{
+	margin:0;
+	padding:0;	
+	box-sizing:border-box;
+}
+body{
+	/*font-family: 'Great Vibes', cursive;*/
+	/*font-family: 'Parisienne', cursive;*/
+	font-family: 'Roboto', sans-serif;
+}
+
+
+span {
+	color: #FF9D00;
+}
+.ptb-100{
+	padding: 100px 0;
+}
+.box-btn {
+	background-color: #19C43F;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.box-btn:hover {
+	background-color: #E58904;
+	color: white;
+	text-decoration: none;
+}
+.box-btn-submit {
+	background-color: #E58904;
+}
+.border-btn {
+	display: inline-block;
+	border: 1px solid #FF9D00;
+	text-align: center;
+	padding: 10px 30px;
+	border-radius: 10px;
+	color: black;
+	text-transform: uppercase;
+	font-size: 14px;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+}
+.border-btn::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #FF9D00;
+	border: 1px solid #FF9D00;
+	top: 0;
+	right: -102%;
+	border-radius: 10px;
+	z-index: -1;
+}
+.border-btn:hover {
+	color: black;
+	text-decoration: none;
+}
+.border-btn:hover::before{
+	right: 0;
+	transition: 0.5s;
+}
+
+/* HEADER */
+
+.header-area {
+	background-color: #132750;
+	padding: 10px 0;
+}
+.header-top {}
+.header-top .container {
+	border-bottom: 1px solid #797ea2;
+	padding-bottom: 10px;
+}
+.header-top a {
+	color: #797ea2;
+	font-size: 14px;
+	margin-right: 10px;
+}
+.header-top a i{}
+.header-down{}
+.logo{}
+.logo a {
+	color: white;
+	font-size: 38px;
+	font-style: italic;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+.submit{}
+.submit a {
+	margin-left: 67%;
+	display: block;
+	margin-top: 12px;
+}
+.submit a i{}
+
+
+
+/*BANNER SECTION START*/
+
+.slider-banners{}
+.banner-area{
+	background-image: url("../img/dream_house_take_away.jpg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	z-index: 2;
+}
+.banner-area::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	opacity: 0.2;
+}
+.banner{}
+.single-banner {
+	padding: 200px;
+	color: white;
+}
+.single-banner h2 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 400;
+}
+.single-banner h1 {
+	font-size: 66px;
+	font-weight: 700;
+	text-transform: capitalize;
+	text-align: center;
+}
+.single-banner h3 {
+	font-size: 26px;
+	text-transform: capitalize;
+	text-align: center;
+}
+.single-banner h3 span{
+	color : white;
+}
+.single-banner i{}
+
+
+/*SEARCHING SECTION START*/
+
+
+.search{}
+.search form {
+	background-color: #132750;
+	padding: 20px;
+	color: white;
+	margin: 20px 0;
+}
+.search form .form-group input[type="text"] {}
+.search form .form-group input[type="int"] {}
+.search form .form-group input[type="submit"] {}
+.search-home {
+	display: block;
+	padding: 8px 50px;
+	border-radius: 5px;
+	margin: 31px 0;
+}
+.sort{}
+.sort p {
+	text-align: right;
+}
+.sort select {}
+
+
+/*RESULT SECTION START*/
+
+
+.result {
+	padding: 20px 0 100px 0;
+	background-color: #F6F6F6;
+}
+.single-result{
+	background-color: white;
+	margin: 10px 0;
+}
+.single-result img{
+	width: 100%;
+}
+.house-info {
+	padding: 20px;
+}
+.house-info-left {}
+.house-info-left h3 {
+	text-transform: capitalize;
+	font-size: 20px;
+}
+.house-info-left p {
+	color: gray;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+.house-info-left p i{}
+.house-info-right{}
+.house-info-right h3 {
+	text-align: right;
+}
+.info-btm {
+	width: 22%;
+	float: left;
+}
+.info-btm h1 {
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 0;
+}
+.info-btm p {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.info-btm-right {
+	float: right;
+}
+.info-btm-right a {}
+
+
+/*OUR INFO SECTION START*/
+
+.our-info {
+	background-color: #24385E;
+	padding: 100px 00;
+	color: white;
+}
+.single-our-info {
+	text-align: center;
+}
+.single-our-info img {
+	margin-bottom: 30px;
+}
+.single-our-info h4 {
+	font-weight: 700;
+	font-size: 22px;
+}
+.single-our-info p {
+	color: #cac8c8;
+	margin-top: 15px;
+}
+
+/*CONTACT SECTION START*/
+
+/*FOOTER SECTION START*/
+
+.footer-top {
+	padding: 80px;
+}
+.footer-top img {
+	width: 200px;
+}
+.footer-top p {
+	color: gray;
+	text-align: center;
+	margin-top: 20px;
+}
+.social-link{}
+.social-link i {}
+.footer-down {
+	border-top: 1px solid #cecbcb;
+}
+.footer-down p {
+	text-align: center;
+	color: gray;
+	font-size: 14px;
+	padding: 20px 0 10px 0;
+}
+
+
+
+
+
+/*========================================REGISTER PAGE==========================================*/
+
+
+.reg-area{}
+.reg {
+	margin: 100px;
+	margin-bottom: 0;
+	border: 2px solid #132750;
+}
+.reg-left {
+	background-color: #132750;
+	height: 100%;
+	color: white;
+	padding: 50px;
+	text-align: center;
+}
+.reg-left img {}
+.reg-left h4 {
+	margin: 10px 0;
+}
+.reg-left p {}
+.reg-right{}
+.reg-form {
+	margin: 50px 50px 50px 0;
+}
+.form-control {
+	border: 1px solid #7a7c7d;
+}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
+.{}
