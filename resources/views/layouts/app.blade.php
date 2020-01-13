@@ -18,6 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	
+	<!--Bootstrap CSS-->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+	<!--My CSS-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+	<!--Responsive CSS-->
+	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
 </head>
 <body>
     <div id="app">
@@ -76,5 +83,10 @@
             @yield('content')
         </main>
     </div>
+	
+	
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

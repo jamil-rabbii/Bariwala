@@ -284,7 +284,9 @@ span {
 /*========================================REGISTER PAGE==========================================*/
 
 
-.reg-area{}
+.reg-area{
+	background-color: white;
+}
 .reg {
 	margin: 100px;
 	margin-bottom: 0;
@@ -309,16 +311,18 @@ span {
 .form-control {
 	border: 1px solid #7a7c7d;
 }
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
-.{}
+
+
+
+
+
+
+/*========================================LOGIN PAGE==========================================*/
+
+.forgot-pass {
+	margin-top: 10px;
+}
+.forgot-pass a {
+	color: red;
+	font-size: 14px;
+}
