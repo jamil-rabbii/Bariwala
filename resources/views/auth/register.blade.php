@@ -1,10 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-
+		<header class="header-area">
+			<div class="header-top">
+				<div class="container">
+					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="submit">
-								<a class="box-btn" href="#">LogIn<i></i></a>
+							<a href="#"><i></i>(+88) 01712345678</a>
+							<a href="#"><i></i>realland@gmail.com</a>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-down">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="logo">
+								<a href="#home"><span>land</span>load</a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="submit" style="float:right;margin-top:0;margin-left:0;">
+								<a class="box-btn" href="{{ route('login') }}" style="float:right;">LogIn<i></i></a>
 							</div>
 						</div>
 					</div>
