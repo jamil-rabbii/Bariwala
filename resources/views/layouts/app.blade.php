@@ -13,12 +13,17 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!--<link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+		
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	
+	<!--Font-Awsome-->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!--Favicon link-->
+	<link rel="shortcut icon" href="assets/img/pagelogo.png"/>
 	<!--Bootstrap CSS-->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
 	<!--My CSS-->
@@ -27,7 +32,11 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
 </head>
 <body>
+	
     <div id="app">
+		
+	@include('frontView.inc.header')
+	<!--
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -39,14 +48,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+ <!--                   <ul class="navbar-nav mr-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+<!--                    <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+<!--                        @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -77,13 +86,14 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>-->
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 	
+	@include('frontView.inc.footer')
 	
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>

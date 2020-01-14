@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="submit">
+								<a class="box-btn" href="#">LogIn<i></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 <!--REGISTER SECTION START-->
 		<div class="reg-area">
 			<div class="container">
