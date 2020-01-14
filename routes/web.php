@@ -23,3 +23,5 @@ Route::get('/','FrontViewController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change');
+Route::post('/password.update','UserInfoUpdatess@password_update')->name('password.update');

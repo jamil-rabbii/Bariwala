@@ -46,6 +46,17 @@
 						</div>
 						<div class="col-lg-7 col-md-7 col-sm-12">
 							<div class="reg-right">
+                                    
+                                <!-- Successfully Password Change Message Start-->
+                                @if(session('successMez'))
+                                <div class="alert alert-success alert-dismissable fade show" role="alert">
+                                    <b>Great!!</b> {{session('successMez')}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="close" ><span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                @endif
+                                <!--Successfully Password Change Message End-->
+
 								<div class="reg-form">
 									<form class="form-horizontal"  method="POST" action="{{ route('login') }}">
 									@csrf
