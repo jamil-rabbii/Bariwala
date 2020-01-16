@@ -20,7 +20,7 @@
 Route::get('/','FrontViewController@index');
 
 //Route::get('/home','HomeController@index');
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change');
