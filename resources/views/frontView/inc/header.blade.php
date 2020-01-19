@@ -19,6 +19,6 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
-								<a href="#home"><span>land</span>load</a>
+								<a href="#home"><span>bari</span>wala</a>
 							</div>
 						</div>

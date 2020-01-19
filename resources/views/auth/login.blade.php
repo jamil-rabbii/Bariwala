@@ -103,6 +103,7 @@
 											<div class="col-sm-offset-2 col-lg-5 col-sm-5">
 											  <button type="submit" class="btn box-btn box-btn-submit">
 											  {{ __('Login') }}</button>
+                                              <a href="{{ url('/redirect') }}" class="btn btn-primary">Login With Google</a>
 											</div>
 											<div class="forgot-pass">
 												<div class="col-lg-5 col-sm-5">
