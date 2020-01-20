@@ -19,7 +19,7 @@
                                 @endif
                                 <!--Successfully Password Change Message End-->
 
-                    <form method="POST" action="{{ route('password.update') }}">
+                    <form method="POST" action="{{ route('password-update') }}">
                         @csrf
 
                         <div class="form-group row">

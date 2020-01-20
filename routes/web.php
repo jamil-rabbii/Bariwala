@@ -24,8 +24,8 @@ Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change');
-Route::post('/password.update','UserInfoUpdatess@password_update')->name('password.update');
+Route::post('/password.update','UserInfoUpdatess@password_update')->name('password-update');
 
-
+// fb
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
