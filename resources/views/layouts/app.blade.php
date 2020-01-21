@@ -30,6 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 	<!--Responsive CSS-->
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>
 </head>
 <body>
     <div id="app">

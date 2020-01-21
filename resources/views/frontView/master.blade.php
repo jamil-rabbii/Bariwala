@@ -13,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.css"/>
 		<!--Favicon link-->
-		<link rel="shortcut icon" href="assets/img/pagelogo.png"/>
+		<link rel="shortcut icon" href="assets/img/favicon.png"/>
 		<!--Barfiller CSS-->
 		<link rel="stylesheet" type="text/css" href="assets/css/barfiller.css"/>
 		<!--Slick Nav CSS-->
