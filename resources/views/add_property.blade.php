@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('css')
+	<!--Bootstrap CSS-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}"/>
+	<!--My CSS-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"/>
+	<!--Responsive CSS-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}"/>
+@endsection
 @section('content')
 					@if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -13,7 +21,7 @@
 					<div class="row">
 						<div class="col-lg-2">
 							<div class="user-pannel-left">
-								<img src="assets/img/pofile.jpg" alt="" />
+								<img src="{{ asset('assets/img/pofile.jpg') }}" alt="" />
 								<p>user name</p>
 								<a href="#" class="btn box-btn box-btn-submit">my profile</a>
 							</div>
@@ -52,24 +60,4 @@
 				</div>
 			</div>
 		</div>
-		
-<!--<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
 @endsection

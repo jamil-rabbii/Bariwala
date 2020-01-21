@@ -327,3 +327,84 @@ span {
 	color: red;
 	font-size: 14px;
 }
+
+
+
+
+
+
+/*========================================USER PANNEL PAGE==========================================*/
+
+.user-pannel-area{}
+.usser-pannel{}
+.user-pannel-left {
+	border-right: 1px solid #9d9a9a;
+	padding: 50px 0;
+	height: 100%;
+}
+.user-pannel-left img {
+	width: 192px;
+	height: 192px;
+	border-radius: 50%;
+	padding: 40px;
+	margin-left: -5px;
+}
+.user-pannel-left p {
+	text-transform: capitalize;
+	font-size: 16px;
+	text-align: center;
+	margin-left: -15px;
+	margin-top: -20px;
+	color: #555454;
+}
+.user-pannel-left a {
+	margin: 0 28px;
+}
+.user-pannel-right {
+	margin: 100px 72px;
+}
+.single-user-content {
+	background-color: teal;
+	padding: 85px 0 0 0;
+	position: relative;
+}
+.single-user-content i {
+	position: absolute;
+	content: "";
+	color: white;
+	transform: translate(40%,-10%);
+	width: 100%;
+	font-size: 40px;
+}
+.single-user-content h4 {
+	margin-top: 70px;
+}
+.single-user-content h4 a {
+	padding: 10px 0;
+	border-top: 1px solid white;
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	font-size: 17px;
+}
+.single-user-content h4 a:hover {
+	background-color: black;
+}
+
+
+
+
+/*========================================USER ADD PROPERTY==========================================*/
+
+.search-user-form {
+	text-transform: capitalize;
+}
+.search-user-form h3 {
+	display: block;
+	width: 100%;
+}
+.search-user-form .form-control {
+	background-color: #e0e0e1;
+}

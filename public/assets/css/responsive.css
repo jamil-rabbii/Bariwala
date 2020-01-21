@@ -14,6 +14,14 @@
 	.search-home {
 		padding: 8px 32px;
 	}
+	.user-pannel-left img {
+		width: 150px;
+		height: 150px;
+		margin-left: -15px;
+	}
+	.user-pannel-left a {
+		margin: 0 2px;
+	}
 	
 }
 
@@ -48,6 +56,19 @@
 	}
 	.footer-top {
 		padding: 80px 100px;
+	}
+	.reg {
+		margin: 100px 0px;
+	}
+	.reg-form {
+		margin: 20px 20px 20px 0;
+	}
+	.user-pannel-left {
+		border-right: 0px;
+		padding: 10px 275px;
+	}
+	.single-user-content {
+		margin-bottom: 30px;
 	}
 	
 	
@@ -117,7 +138,31 @@
 		font-size: 12px;
 		padding: 10px 10px 5px 0;
 	}
-	
+	.reg {
+		margin: 50px 10px;
+	}
+	.reg-left {
+		display: none;
+	}
+	.reg-right {
+		padding: 20px 20px;
+	}
+	.reg-form {
+		margin: 0;
+	}
+	.user-pannel-left {
+		border-right: 0px;
+		padding: 10px 0;
+	}
+	.user-pannel-left img {
+		margin-left: 65px;
+	}
+	.user-pannel-left a {
+		margin: 0 105px;
+	}
+	.single-user-content {
+		padding: 30px 0 0 0;
+	}
 	
 }
 
@@ -146,7 +191,12 @@
 .house-info-right h3 {
 	font-size: 32px;
 }
-	
+.user-pannel-left img {
+	margin-left: 180px;
+}
+.user-pannel-left a {
+	margin: 0 220px;
+}	
 	
 	
 	
