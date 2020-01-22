@@ -28,9 +28,9 @@
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">
-										<div class="single-user-content" style="background-color: #457b45;">
+										<div class="single-user-content" style="background-color: #457b45;"><a href="/user/add_property">
 											<i class="fa fa-plus-circle" aria-hidden="true"></i>
-											<h4><a href="/user/add_property">submit new property</a></h4>
+											<h4>submit new property</a></h4>
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">
