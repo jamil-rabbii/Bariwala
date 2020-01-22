@@ -20,6 +20,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>
 	<!--Font-Awsome-->
 	<link rel="stylesheet" href="assets/css/all.min.css">
 	<!--Favicon link-->
@@ -30,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 	<!--Responsive CSS-->
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
-    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+	@yield('css')
 </head>
 <body>
     <div id="app">
@@ -39,26 +41,50 @@
                             @if (Route::has('register'))
                             @endif
                         @else
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <!--{{ config('app.name', 'Bariwala') }}-->
-					Bariwala
-                </a>
+						
+		<header class="header-area">
+			<div class="header-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<a href="#"><i></i>(+88) 01712345678</a>
+							<a href="#"><i></i>realland@gmail.com</a>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-down">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="logo">
+								<a href="#home"><span>land</span>load</a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+						
+						
+						
+						
+						
+
+		<nav class="navbar navbar-expand-md shadow-m">
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a style="color:white;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -85,8 +111,12 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
         </nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>	
 
         <main class="py-4">
             @yield('content')

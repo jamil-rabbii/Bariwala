@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+	
+    public function add_pro()
+    {
+        return view('add_property');
+    }
 }
