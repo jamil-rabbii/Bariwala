@@ -27,6 +27,6 @@ Route::get('/user/add_property', 'HomeController@add_pro')->name('home');
 Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change');
 Route::post('/password.update','UserInfoUpdatess@password_update')->name('password-update');
 
-// fb
+// google
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
