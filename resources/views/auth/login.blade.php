@@ -7,7 +7,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<a href="#"><i></i>(+88) 01712345678</a>
-							<a href="#"><i></i>realland@gmail.com</a>
+							<a href="#"><i></i>bariwala@gmail.com</a>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							
@@ -20,7 +20,11 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
+<<<<<<< HEAD
 								<a href="#home"><span>Bari</span>wala</a>
+=======
+								<a href="#home"><span>bari</span>wala</a>
+>>>>>>> 94067d19c99ec869f4ab19a6303f8661d66f675d
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">

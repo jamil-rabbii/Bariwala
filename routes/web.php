@@ -18,12 +18,11 @@
 // Home //
 
 Route::get('/','FrontViewController@index');
+Route::get('/user/add_property', 'FrontViewController@add_pro')->name('home');
 
 //Route::get('/home','HomeController@index');
 Auth::routes(['verify'=>true]);
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/user/add_property', 'HomeController@add_pro')->name('home');
 Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change');
 Route::post('/password.update','UserInfoUpdatess@password_update')->name('password-update');
 
