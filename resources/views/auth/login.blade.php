@@ -20,11 +20,8 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
-<<<<<<< HEAD
-								<a href="#home"><span>Bari</span>wala</a>
-=======
-								<a href="#home"><span>bari</span>wala</a>
->>>>>>> 94067d19c99ec869f4ab19a6303f8661d66f675d
+								<!--<a href="#home"><span>land</span>load</a>-->
+								<img src="assets/img/Screenshot_2020-01-25 Landload(7).png" alt="" />
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
@@ -107,7 +104,6 @@
 											<div class="col-sm-offset-2 col-lg-5 col-sm-5">
 											  <button type="submit" class="btn box-btn box-btn-submit">
 											  {{ __('Login') }}</button>
-                                              <a href="{{ url('/redirect') }}" class="btn btn-primary">Login With Google</a>
 											</div>
 											<div class="forgot-pass">
 												<div class="col-lg-5 col-sm-5">
@@ -118,6 +114,9 @@
 													</a>
 												@endif
 												</div>
+											</div>
+											<div class="google-login">
+                                              <a href="{{ url('/redirect') }}" class="btn btn-primary"><i class="fa fa-google-plus-square" aria-hidden="true"></i>Login With Google</a>
 											</div>
 										</div>
 									</form>

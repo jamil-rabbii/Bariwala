@@ -20,7 +20,8 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
-								<a href="#home"><span>bari</span>wala</a>
+								<!--<a href="#home"><span>land</span>load</a>-->
+								<img src="assets/img/Screenshot_2020-01-25 Landload(7).png" alt="" />
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">

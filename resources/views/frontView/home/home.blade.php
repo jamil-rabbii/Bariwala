@@ -224,7 +224,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<img class="rounded mx-auto d-block" src="assets/img/logo-footer.png" alt="logo" />
+						<img class="rounded mx-auto d-block" src="assets/img/Screenshot_2020-01-25 Landload(6).png" alt="logo" />
 						<p>ReaLand is made for buying and selling houses faster, easier and customized for you.</p>
 						<div class="social-link">
 							

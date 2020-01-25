@@ -24,7 +24,7 @@
 									<div class="col-lg-3 col-md-6">
 										<div class="single-user-content">
 											<i class="fa fa-search-plus" aria-hidden="true"></i>
-											<h4><a href="#">search home</a></h4>
+											<h4><a href="/user/search">search home</a></h4>
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">
@@ -36,13 +36,13 @@
 									<div class="col-lg-3 col-md-6">
 										<div class="single-user-content" style="background-color: #919116;">
 											<i class="fa fa-star" aria-hidden="true"></i>
-											<h4><a href="#">my property</a></h4>
+											<h4><a href="/user/own_post">my property</a></h4>
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">
 										<div class="single-user-content" style="background-color: #a25e5e;">
 											<i class="fa fa-heart" aria-hidden="true"></i>
-											<h4><a href="#">bookmark listing</a></h4>
+											<h4><a href="/user/bookmark">bookmark listing</a></h4>
 										</div>
 									</div>
 								</div>
