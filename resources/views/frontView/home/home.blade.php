@@ -8,7 +8,7 @@
 	
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="submit">
-								<a class="box-btn" href="#">+ submit property<i></i></a>
+								<a class="box-btn" href="#">+ advertise home<i></i></a>
 							</div>
 						</div>
 					</div>

@@ -16,22 +16,21 @@
     <!--<link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-		
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	
-    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}"/>
 	<!--Font-Awsome-->
-	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="{{ asset('assets/css/all.min.css')}}">
 	<!--Favicon link-->
-	<link rel="shortcut icon" href="assets/img/pagelogo.png"/>
+	<link rel="shortcut icon" href="{{ asset('assets/img/pagelogo.png') }}"/>
 	<!--Bootstrap CSS-->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}"/>
 	<!--My CSS-->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"/>
 	<!--Responsive CSS-->
-	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}"/>
 	@yield('css')
 </head>
 <body>
@@ -62,7 +61,7 @@
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
 								<!--<a href="#home"><span>land</span>load</a>-->
-								<img src="assets/img/Screenshot_2020-01-25 Landload(7).png" alt="" />
+								<img src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(7).png')}}" alt="" />
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
@@ -126,8 +125,8 @@
 	
 	@include('frontView.inc.footer')
 	
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 </html>

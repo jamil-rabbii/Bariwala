@@ -14,7 +14,7 @@
 						<div class="col-lg-2">
 							<div class="user-pannel-left">
 								<img src="assets/img/pofile.jpg" alt="" />
-								<p>user name</p>
+								<p> {{ Auth::user()->name }}</p>
 								<a href="#" class="btn box-btn box-btn-submit">my profile</a>
 							</div>
 						</div>
@@ -30,13 +30,13 @@
 									<div class="col-lg-3 col-md-6">
 										<div class="single-user-content" style="background-color: #457b45;"><a href="/user/add_property">
 											<i class="fa fa-plus-circle" aria-hidden="true"></i>
-											<h4>submit new property</a></h4>
+											<h4>advertise home</a></h4>
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">
 										<div class="single-user-content" style="background-color: #919116;">
 											<i class="fa fa-star" aria-hidden="true"></i>
-											<h4><a href="/user/own_post">my property</a></h4>
+											<h4><a href="/user/own_post">my posts</a></h4>
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">

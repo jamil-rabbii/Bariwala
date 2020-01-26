@@ -21,12 +21,12 @@
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
 								<!--<a href="#home"><span>land</span>load</a>-->
-								<img src="assets/img/Screenshot_2020-01-25 Landload(7).png" alt="" />
+								<img src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(7).png')}}" alt="" />
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="submit" style="float:right;margin-top:0;margin-left:0;">
-								<a class="box-btn" href="{{ route('login') }}" style="float:right;">LogIn<i></i></a>
+								<a class="box-btn" href="{{ route('login') }}" style="float:right;">Signin<i></i></a>
 							</div>
 						</div>
 					</div>
@@ -104,7 +104,7 @@
 									</div>
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
-										  <button type="submit" class="btn box-btn box-btn-submit">Submit</button>
+										  <button type="submit" class="btn box-btn box-btn-submit">Sign Up</button>
 										</div>
 									</div>
 									</form>
