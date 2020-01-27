@@ -35,7 +35,7 @@
 											<div class="form-sec row">
 												<h3>Basic Information</h3>
 												<div class="form-group col-md-12">
-													<label for="">Property Title * </label>
+													<label for="">Advertisement Title * </label>
 													<input type="" class="form-control" id="" placeholder="perfect house for rent">
 												</div>
 												<div class="form-group col-md-4">
@@ -55,16 +55,16 @@
 												<div class="form-group col-md-4">
 													<label for="">rental period * </label>
 													<select id="" class="form-control">
-														<option selected>house</option>
-														<option>apartment</option>
+														<option selected>yearly</option>
+														<option>monthly</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
-													<label for="">Property price * </label>
+													<label for=""> price * </label>
 													<input type="number" class="form-control" id="" placeholder="TK * ">
 												</div>
 												<div class="form-group col-md-4">
-													<label for="">Property room * </label>
+													<label for=""> room * </label>
 													<select id="" class="form-control">
 														<option selected>1</option>
 														<option>2</option>
