@@ -25,10 +25,31 @@
 							<div class="user-pannel-right">
 								<div class="row">
 									<div class="search-user-form">
+										
 										<form action="/insert" method="post" enctype="multipart/form-data">
 										@csrf
 											<div class="form-sec row">
 												<h3>Basic Information</h3>
+													@if(count($errors) >0)
+														<div class="alert alert-danger alert-dismissable fade show" role="alert">
+															Image validation error <br><br>
+															 <button type="button" class="close" data-dismiss="alert" aria-label="close" ><span aria-hidden="true">&times;</span>
+                                   								 </button>
+															<ul>
+																@foreach($errors->all() as $errors)
+																<li>{{ $errors }}</li> <br>
+																@endforeach
+															</ul>
+														</div>
+													@endif
+
+													@if(session('insertsuccess'))
+						                                <div class="alert alert-success alert-dismissable fade show" role="alert">
+						                                    <b>Great!</b> {{session('insertsuccess')}}
+						                                    <button type="button" class="close" data-dismiss="alert" aria-label="close" ><span aria-hidden="true">&times;</span>
+						                                    </button>
+						                                </div>
+                                				 	@endif
 												<div class="form-group col-md-12">
 													<label for="">Advertisement Title * </label>
 													<input type="" class="form-control" id="title" name="title" placeholder="perfect house for rent">
@@ -125,52 +146,56 @@
 												<h3>Other Features</h3>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Air Conditioning">Air Conditioning 
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]" value="Air Conditioning">Air Conditioning 
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Lawn">Lawn
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]" value="Lawn">Lawn
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Swimming Pool">Swimming Pool
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]"
+														value="Swimming Pool">Swimming Pool
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Exercise Room">Exercise Room 
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]"
+														value="Exercise Room">Exercise Room 
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Barbecue">Barbecue
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]"
+														value="Barbecue">Barbecue
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Microwave">Microwave
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]" value="Microwave">Microwave
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="TV Cable">TV Cable
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]"
+														value="TV Cable">TV Cable
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Washer">Washer
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]" value="Washer">Washer
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Outdoor Shower">Outdoor Shower
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]" value="Outdoor Shower">Outdoor Shower
 													</label>
 												</div>
 												<div class="form-check" style="margin-right:30px;">
 													<label class="form-check-label">
-														<input type="checkbox" class="form-check-input" value="Outdoor Shower">Gym
+														<input type="checkbox" class="form-check-input" name="extra_facilities[]" value="Gym">Gym
 													</label>
 												</div>
 											</div>

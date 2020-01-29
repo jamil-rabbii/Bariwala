@@ -17,6 +17,11 @@ class UsersActionController extends Controller
         $table->rentalperiod = $request->rental_period;
         $table->price = $request->price;
         $table->room = $request->room;
+        
+        $this->validate($request,[
+          'featured_image'     => '
+             required|image|mimes:jpeg,png,jpg,gif|max:2028'
+         ]);
 		if ($request->hasFile('featured_image')) {
 
             $extension = $request->featured_image->extension();
@@ -33,9 +38,11 @@ class UsersActionController extends Controller
         $table->bedroom = $request->bedrooms;
         $table->bathroom = $request->bathrooms;
         $table->parking = $request->parking;
+        $table->otherfeatures = implode(", ",$request->extra_facilities);
         $table->addid = $request->add_id;
 		$table->save();
-		return redirect()->to('/');
+        return Redirect()->back()->with('insertsuccess',' your advertisement for rent house has been successfully posted');
+		//return redirect()->to('/');
         //echo $table;
     }
 	
