@@ -32,3 +32,6 @@ Route::post('/password.update','UserInfoUpdatess@password_update')->name('passwo
 // google
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
+
+
+Route::POST('/insert','UsersActionController@save');

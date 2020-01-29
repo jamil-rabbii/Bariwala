@@ -20,109 +20,104 @@
 			<div class="container-fluid">
 				<div class="usser-pannel">
 					<div class="row">
-						<div class="col-lg-2">
-							<div class="user-pannel-left">
-								<img src="{{ asset('assets/img/pofile.jpg') }}" alt="" />
-								<p> {{ Auth::user()->name }}</p>
-								<a href="#" class="btn box-btn box-btn-submit">my profile</a>
-							</div>
-						</div>
+						@include('frontView.inc.user_info_left')
 						<div class="col-lg-10">
 							<div class="user-pannel-right">
 								<div class="row">
 									<div class="search-user-form">
-										<form action="#">
+										<form action="/insert" method="post" enctype="multipart/form-data">
+										@csrf
 											<div class="form-sec row">
 												<h3>Basic Information</h3>
 												<div class="form-group col-md-12">
 													<label for="">Advertisement Title * </label>
-													<input type="" class="form-control" id="" placeholder="perfect house for rent">
+													<input type="" class="form-control" id="title" name="title" placeholder="perfect house for rent">
 												</div>
 												<div class="form-group col-md-4">
 													<label for="">property type * </label>
-													<select id="" class="form-control">
-														<option selected>house</option>
-														<option>apartment</option>
+													<select id="property_type" name="property_type" class="form-control">
+														<option value="house" selected>house</option>
+														<option value="apartment">apartment</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
 													<label for="">rent for * </label>
-													<select id="" class="form-control">
-														<option selected>family</option>
-														<option>bachelor</option>
+													<select id="rent_for" name="rent_for" class="form-control">
+														<option value="family" selected>family</option>
+														<option value="bachelor">bachelor</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
 													<label for="">rental period * </label>
-													<select id="" class="form-control">
-														<option selected>yearly</option>
-														<option>monthly</option>
+													<select id="rental_period" name="rental_period" class="form-control">
+														<option value="yearly" selected>yearly</option>
+														<option value="monthly">monthly</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
-													<label for=""> price * </label>
-													<input type="number" class="form-control" id="" placeholder="TK * ">
+													<label for="price"> price * </label>
+													<input type="number" class="form-control" id="price" name="price" placeholder="TK * ">
 												</div>
 												<div class="form-group col-md-4">
-													<label for=""> room * </label>
-													<select id="" class="form-control">
-														<option selected>1</option>
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-														<option>5</option>
-														<option>more than 5</option>
+													<label for="room"> room * </label>
+													<select id="room" name="room" class="form-control">
+														<option value="1" selected>1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">more than 5</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
-													<label for="">Featured Image * </label>
-													<input type="file" class="form-control" id="" placeholder="image">
+													<label for="FeaturedImage">Featured Image * </label>
+													<input type="file" class="form-control" id="featured_image" name="featured_image" placeholder="image">
 												</div>
 												<div class="form-group col-md-12">
-													<label for="comment">Description * </label>
-													<textarea class="form-control" rows="5" id="comment"></textarea>
+													<label for="description">Description * </label>
+													<textarea class="form-control" rows="5" id="description" name="description"></textarea>
 												</div>
 											</div>
 											<div class="form-sec row">
 												<h3>Location</h3>
 												<div class="form-group col-md-8">
-													<label for="">Adress * </label>
-													<input type="text" class="form-control" id="" placeholder="adrress *">
+													<label for="location">Adress * </label>
+													<input type="text" class="form-control" id="location" name="location" placeholder="adrress *">
 												</div>
 												<div class="form-group col-md-4">
-													<label for="">City * </label>
-													<input type="text" class="form-control" id="" placeholder="city *">
+													<label for="city">City * </label>
+													<input type="text" class="form-control" id="city" name="city" placeholder="city *">
 												</div>
 											</div>
 											<div class="form-sec row">
 												<h3>Detailed Information</h3>
 												<div class="form-group col-md-4">
-													<label for="">bedrooms * </label>
-													<select id="" class="form-control">
-														<option selected>1</option>
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-														<option>5</option>
-														<option>more than 5</option>
+													<label for="bedrooms">bedrooms * </label>
+													<select id="bedrooms" name="bedrooms" class="form-control">
+														<option value="1" selected>1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">more than 5</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
-													<label for="">bathrooms * </label>
-													<select id="" class="form-control">
-														<option selected>1</option>
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-														<option>5</option>
-														<option>more than 5</option>
+													<label for="bathrooms">bathrooms * </label>
+													<select id="bathrooms" name="bathrooms" class="form-control">
+														<option value="1" selected>1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">more than 5</option>
 													</select>
 												</div>
 												<div class="form-group col-md-4">
-													<label for="">parking * </label>
-													<select id="" class="form-control">
-														<option selected>yes</option>
-														<option>no</option>
+													<label for="parking">parking * </label>
+													<select id="parking" name="parking" class="form-control">
+														<option value="yes" selected>yes</option>
+														<option value="no">no</option>
 													</select>
 												</div>
 											</div>
@@ -179,11 +174,14 @@
 													</label>
 												</div>
 											</div>
+											<div class="form-group col-md-4">
+												<label for="userId"></label>
+												<input type="hidden" class="form-control" id="userId" name="add_id" value="{{ Auth::user()->id }}">
+											</div>
 											<div class="form-sec row mt-4">
 												<div class="form-group">
 													<div class="col-sm-offset-2 col-sm-10">
-													  <button type="submit" class="btn box-btn box-btn-submit">+
-													  Submit property</button>
+													  <button type="submit" class="btn box-btn box-btn-submit"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;"></i>published</button>
 													</div>
 												</div>
 											</div>
