@@ -6,8 +6,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<a href="#"><i></i>(+88) 01712345678</a>
-							<a href="#"><i></i>bariwala@gmail.com</a>
+							<a href="tel:+8801712345678"><i class="fa fa-phone" aria-hidden="true"></i>(+88) 01712345678</a>
+							<a href="mailto:bariwala@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>realland@gmail.com</a>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							
@@ -25,7 +25,7 @@
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="submit" style="float:right;margin-top:0;margin-left:0;">
+							<div class="submit">
 								<a class="box-btn" href="{{ route('register') }}" style="float:right;">register<i></i></a>
 							</div>
 						</div>
@@ -109,14 +109,14 @@
 												<div class="col-lg-5 col-sm-5">
 													
 												@if (Route::has('password.request'))
-													<a class="btn btn-link" href="{{ route('password.request') }}">
+													<a style="margin-left: -20px;" class="btn btn-link" href="{{ route('password.request') }}">
 														{{ __('Forgot Your Password?') }}
 													</a>
 												@endif
 												</div>
 											</div>
 											<div class="google-login">
-                                              <a href="{{ url('/redirect') }}" class="btn btn-primary"><i class="fa fa-google-plus-square" aria-hidden="true"></i>Login With Google</a>
+                                              <a href="{{ url('/redirect') }}" class="btn btn-primary"><i class="fa fa-google" aria-hidden="true"></i>Login With Google</a>
 											</div>
 										</div>
 									</form>

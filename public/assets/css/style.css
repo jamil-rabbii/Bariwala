@@ -23,6 +23,7 @@ span {
 	border-radius: 5px;
 	text-transform: uppercase;
 	font-size: 14px;
+	margin-left: -15px;
 }
 .box-btn:hover {
 	background-color: #E58904;
@@ -31,6 +32,9 @@ span {
 }
 .box-btn-submit {
 	background-color: #E58904;
+}
+.box-btn-submit:hover {
+	background-color: #CC7B05;
 }
 .border-btn {
 	display: inline-block;
@@ -82,7 +86,13 @@ span {
 	font-size: 14px;
 	margin-right: 10px;
 }
-.header-top a i{}
+.header-top a:hover {
+	color: white;
+}
+.header-top a i {
+	margin-left: 5px;
+	font-size: 12px;
+}
 .header-down{}
 .logo{}
 .logo img {
@@ -98,17 +108,21 @@ span {
 .headerr-login {
 	float: right;
 }
-.headerr-login a{}
+.headerr-login a {
+	color: white;
+}
 .headerr-login a:hover {
 	color: #FF9D00;
 }
 .submit{}
 .submit a {
-	margin-left: 67%;
 	display: block;
 	margin-top: 12px;
+	float: right;
 }
-.submit a i{}
+.submit a i {
+	margin-left: 5px;
+}
 
 
 
@@ -135,7 +149,7 @@ span {
 }
 .banner{}
 .single-banner {
-	padding: 200px;
+	padding: 100px;
 	color: white;
 }
 .single-banner h2 {
@@ -145,7 +159,7 @@ span {
 	font-weight: 400;
 }
 .single-banner h1 {
-	font-size: 66px;
+	font-size: 54px;
 	font-weight: 700;
 	text-transform: capitalize;
 	text-align: center;

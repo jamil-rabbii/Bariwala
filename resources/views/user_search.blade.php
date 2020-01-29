@@ -19,13 +19,7 @@
 			<div class="container-fluid">
 				<div class="usser-pannel">
 					<div class="row">
-						<div class="col-lg-2">
-							<div class="user-pannel-left">
-								<img src="{{ asset('assets/img/pofile.jpg') }}" alt="" />
-								<p>user name</p>
-								<a href="#" class="btn box-btn box-btn-submit">my profile</a>
-							</div>
-						</div>
+						@include('frontView.inc.user_info_left')
 						<div class="col-lg-10">
 							<!--SEARCHING SECTION START-->
 							<div class="user-search">

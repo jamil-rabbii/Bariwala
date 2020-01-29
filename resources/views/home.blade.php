@@ -11,13 +11,7 @@
 			<div class="container-fluid">
 				<div class="usser-pannel">
 					<div class="row">
-						<div class="col-lg-2">
-							<div class="user-pannel-left">
-								<img src="assets/img/pofile.jpg" alt="" />
-								<p> {{ Auth::user()->name }}</p>
-								<a href="#" class="btn box-btn box-btn-submit">my profile</a>
-							</div>
-						</div>
+						@include('frontView.inc.user_info_left')
 						<div class="col-lg-10">
 							<div class="user-pannel-right">
 								<div class="row">

@@ -46,8 +46,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<a href="#"><i></i>(+88) 01712345678</a>
-							<a href="#"><i></i>bariwala@gmail.com</a>
+							<a href="tel:+8801712345678"><i class="fa fa-phone" aria-hidden="true"></i>(+88) 01712345678</a>
+							<a href="mailto:bariwala@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>realland@gmail.com</a>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							
