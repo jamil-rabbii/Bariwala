@@ -27,32 +27,36 @@
 									<div class="container">
 										<div class="row">
 											<div class="col-lg-12 clo-md-12 col-sm-12">
-												<form action="#">
+												<form action="/usersr_search_result" method="post" enctype="multipart/form-data">
+												@csrf
 													<div class="row">
 														<div class="col-lg-10 clo-md-10 col-sm-12">
 															<div class="row">
 																<div class="col-lg-3 clo-md-3 col-sm-12">
 																	<div class="form-group">
 																		<label for="city">SELECT YOUR CITY</label>
-																		<input type="text" class="form-control" id="">
+																		<input type="text" class="form-control" id="city" name="city">
 																	</div>
 																</div>
 																<div class="col-lg-3 clo-md-3 col-sm-12">
 																	<div class="form-group">
 																		<label for="max_price">MAX PRICE</label>
-																		<input type="int" class="form-control" id="">
+																		<input type="int" class="form-control" id="max_price" name="max_price">
 																	</div>
 																</div>
 																<div class="col-lg-3 clo-md-3 col-sm-12">
 																	<div class="form-group">
 																		<label for="bedrooms">BEDROOMS</label>
-																		<input type="int" class="form-control" id="">
+																		<input type="int" class="form-control" id="bedrooms" name="bedrooms">
 																	</div>
 																</div>
 																<div class="col-lg-3 clo-md-3 col-sm-12">
 																	<div class="form-group">
-																		<label for="bathrooms">BATHROOMS</label>
-																		<input type="int" class="form-control" id="">
+																		<label for="">SEARCHING FOR * </label>
+																		<select id="searching_for" class="form-control" name="searching_for">
+																			<option value="family" selected>Family</option>
+																			<option value="bachelor">Bachelor</option>
+																		</select>
 																	</div>
 																</div>
 															</div>

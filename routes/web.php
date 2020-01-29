@@ -35,3 +35,4 @@ Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 
 Route::POST('/insert','UsersActionController@save');
+Route::POST('/usersr_search_result','UsersActionController@users_search_result');
