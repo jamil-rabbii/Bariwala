@@ -47,26 +47,22 @@ class UsersActionController extends Controller
     }
 	
 	
+	public function users_search_result(Request $request)
+    {
+		$city = $request->city;
+		$max_price = $request->max_price;
+		$bedrooms = $request->bedrooms;
+		$searching_for = $request->searching_for;
+
+
+         $data = Advertisementproparty::where([['city', '=', $city],['price', '<=', $max_price],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],])->get();
+        return view('users_search_result')->with(['data'=>$data]);
+        //echo $data;
+		//echo $city,$max_price,$bedrooms,$searching_for;
+        //return view('users_search_result');
+    }
 	
 	
 	
 }
 
-
-/*$table = new Category();
-        $table->name = $request->name;
-
-        //image upload
-        if ($request->hasFile('imageName')) {
-
-            $extension = $request->imageName->extension();
-            $filename =  md5(date('Y-m-d H:i:s'));
-            $filename = $filename.'.'.$extension;
-
-            $table->imageName = $filename;
-
-            $request->imageName->move('public/uploads/img',$filename);
-        }
-        $table->save();
-
-        return redirect()->to('/');*/

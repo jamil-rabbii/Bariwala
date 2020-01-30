@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
+use App\Advertisementproparty;
+use Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class FrontViewController extends Controller
@@ -17,7 +20,9 @@ class FrontViewController extends Controller
 	
 	public function own_post()
     {
-        return view('users_own_post');
+		$data = Advertisementproparty::where('addid', Auth::user()->id )->get();
+		//$data = DB::table('Advertisementproparty')->where('add_id', '1')->get();
+        return view('users_own_post')->with(['data'=>$data]);
     }
 	
 	public function user_search()

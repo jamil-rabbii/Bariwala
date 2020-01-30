@@ -32,7 +32,32 @@
 										</tr>
 									</thead>
 									<tbody>
+									@foreach($data as $row)
 										<tr>
+											<td>
+												<img src="{{ asset('advertisement/img/'.$row->featureimg) }}" alt="" />
+											</td>
+											<td>
+												<div class="user-house-info">
+													<h2>{{$row->title}}</h2>
+													<p><i class="fa fa-location-arrow" aria-hidden="true"></i>{{$row->location}}</p>
+													<h3><span>&#2547; {{$row->price}}</span></h3>
+												</div>
+											</td>
+											<td>
+												<div class="ex-date">
+													<p>30 December, 2018</p>
+												</div>
+											</td>
+											<td>
+												<div class="user-post-table-link">
+													<a class="text-success" href="#"><i class="fa fa-minus-circle" aria-hidden="true"></i>edit</a>
+													<a class="text-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
+												</div>
+											</td>
+										</tr>
+									@endforeach
+										<!--<tr>
 											<td>
 												<img src="{{ asset('assets/img/dream_house_take_away.jpg') }}" alt="" />
 											</td>
@@ -100,7 +125,7 @@
 													<a class="text-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
 												</div>
 											</td>
-										</tr>
+										</tr>-->
 									</tbody>
 								</table>
 							</div>
