@@ -34,4 +34,12 @@ class FrontViewController extends Controller
     {
         return view('bookmark_listing');
     }
+    public function all_post()
+    {
+        $data = Advertisementproparty::all();
+        //$data = DB::table('advertisementproparty')->get();
+        return view('frontView.home.home')->with(['data'=>$data]);
+       // echo $data;
+    }
+
 }

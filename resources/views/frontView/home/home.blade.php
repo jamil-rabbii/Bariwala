@@ -97,31 +97,34 @@
 		<section class="result">
 			<div class="container">
 				<div class="row">
+					@foreach($data as $row)
 					<div class="col-lg-6 col-sm-12">
 						<div class="single-result">
-							<img src="assets/img/residia_nishi_azabu.jpg" alt="house" />
+							<!--<img src="{{ asset('advertisement/img/'.$row->featureimg) }}" alt="" />-->
+
+							<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
 							<div class="house-info">
 								<div class="row">
 									<div class="col-lg-8 col-sm-6">
 										<div class="house-info-left">
-											<h3>house name</h3>
-											<p><i></i> 157 West 57th St, 77 - Central Park South, NYC</p>
+											<h3>{{$row->title}}</h3>
+											<p><i></i> {{$row->location}}</p>
 										</div>
 									</div>
 									<div class="col-lg-4 col-sm-6">
 										<div class="house-info-right">
-											<h3><span>&#2547; 6000</span></h3>
+											<h3><span>&#2547; {{$row->price}}</span></h3>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="info-btm">
-											<h1>5<sup>+</sup></h1>
+											<h1>{{$row->bedroom}}</h1>
 											<p>beds</p>
 										</div>
 										<div class="info-btm">
-											<h1>3</h1>
+											<h1>{{$row->bathroom}}</h1>
 											<p>baths</p>
 										</div>
 									</div>
@@ -134,47 +137,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 col-sm-12">
-						<div class="single-result">
-							<img src="assets/img/residia_nishi_azabu.jpg" alt="house" />
-							<div class="house-info">
-								<div class="row">
-									<div class="col-lg-8 col-sm-6">
-										<div class="house-info-left">
-											<h3>house name</h3>
-											<p><i></i> 157 West 57th St, 77 - Central Park South, NYC</p>
-										</div>
-									</div>
-									<div class="col-lg-4 col-sm-6">
-										<div class="house-info-right">
-											<h3><span>&#2547; 6000</span></h3>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="info-btm">
-											<h1>5<sup>+</sup></h1>
-											<p>beds</p>
-										</div>
-										<div class="info-btm">
-											<h1>3</h1>
-											<p>baths</p>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="info-btm-right">
-											<a class="border-btn" href="#">details</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</section>
 <!--OUR INFO SECTION START-->
+
 		<section class="our-info">
 			<div class="container">
 				<div class="row">

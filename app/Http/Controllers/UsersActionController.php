@@ -30,7 +30,7 @@ class UsersActionController extends Controller
 
             $table->featureimg = $filename;
 
-            $request->featured_image->move('advertisement/img',$filename);
+            $request->featured_image->move('assets/img',$filename);
         }
         $table->description = $request->description;
         $table->location = $request->location;

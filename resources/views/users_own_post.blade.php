@@ -35,7 +35,7 @@
 									@foreach($data as $row)
 										<tr>
 											<td>
-												<img src="{{ asset('advertisement/img/'.$row->featureimg) }}" alt="" />
+												<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
 											</td>
 											<td>
 												<div class="user-house-info">
