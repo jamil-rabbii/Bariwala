@@ -73,7 +73,7 @@ span {
 /* HEADER */
 
 .header-area {
-	background-color: #132750;
+	background-color: #0B224F;
 	padding: 10px 0;
 }
 .header-top {}
@@ -90,7 +90,7 @@ span {
 	color: white;
 }
 .header-top a i {
-	margin-left: 5px;
+	margin-right: 5px;
 	font-size: 12px;
 }
 .header-down{}
@@ -110,6 +110,9 @@ span {
 }
 .headerr-login a {
 	color: white;
+}
+.headerr-login a i {
+	margin-left: 5px;
 }
 .headerr-login a:hover {
 	color: #FF9D00;
@@ -212,14 +215,28 @@ span {
 	background-color: white;
 	margin: 10px 0;
 }
+.single-result:hover {
+	box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.2), 0 0px 15px 0 rgba(0, 0, 0, 0.19);
+}
 .single-result img {
 	width: 100%;
-	height: 320px;
+	height: 250px;
+	transition: 0.5s;
+}
+.single-result-img {
+	overflow: hidden;
+	transition: 0.5s;
+}
+.single-result-img img:hover {
+	transform: scale(1.25);
+	overflow: ;
 }
 .house-info {
 	padding: 20px;
 }
-.house-info-left {}
+.house-info-left {
+	min-height: 100px;
+}
 .house-info-left h3 {
 	text-transform: capitalize;
 	font-size: 20px;
@@ -233,9 +250,10 @@ span {
 .house-info-right{}
 .house-info-right h3 {
 	text-align: right;
+	font-size: 26px;
 }
 .info-btm {
-	width: 22%;
+	width: 30%;
 	float: left;
 }
 .info-btm h1 {
@@ -475,6 +493,7 @@ span {
 	width: 300px;
 	margin-right: -45px;
 	border-radius: 20px;
+	height: 180px;
 }
 .user-house-info {
 	padding: 15px;
@@ -534,4 +553,219 @@ span {
 	width: 100%;
 	margin-right: -390px;
 	border-radius: 20px;
+}
+
+
+
+
+/*========================================HOME VIEW BOOKMARK PAGE==========================================*/
+
+.home-view-area {
+	padding: 40px 0 20px 0;
+}
+.single-home-view{}
+.first-intro {
+	border-top: 1px solid #c4c2c2;
+	padding: 35px 0;
+}
+.intro-title{}
+.intro-title h1 {
+	font-size: 44px;
+	font-family: initial;
+}
+.intro-title p {
+	color: gray;
+	font-size: 16px;
+}
+.intro-title i {
+	font-size: 13px;
+	margin-right: 5px;
+}
+.rooms-info {
+	border-left: 1px solid #c4c2c2;
+	border-right: 1px solid #c4c2c2;
+	padding: 0 20px;
+	text-align: center;
+}
+.rooms-info h2 {
+	font-weight: 400;
+	font-size: 30px;
+}
+.rooms-info p {
+	text-transform: uppercase;
+	font-size: 13px;
+	color: gray;
+}
+.amount{}
+.amount h2 {
+	padding: 23px 0;
+	text-align: left;
+}
+.add-cart{}
+.add-cart a {
+	background-color: #132750;
+	color: white;
+	padding: 15px 30px;
+	text-transform: uppercase;
+	border-radius: 15px;
+	float: right;
+}
+.add-cart a:hover {
+	text-decoration: none;
+	background-color: #b9213e;
+}
+.home-view-banner-area{}
+.number-plate {
+	
+}
+.number-plate img {
+	width: 22%;
+}
+.home-view-banner{
+	padding: 30px 0;
+}
+.home-view-banner img {
+	width: 100%;
+	height: 500px;
+}
+.home-description-area {
+	background-color: #F6F6F6;
+	padding: 40px 0;
+}
+.owner-info {
+	text-align: center;
+	background-color: white;
+	padding: 30px 0;
+	transition: 0.5s;
+}
+.owner-info:hover {
+	box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.2), 0 0px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.owner-info img {
+	width: 100%;
+	padding: 10px 30%;
+}
+.owner-info h3 {
+	text-align: center;
+	text-transform: capitalize;
+	font-size: 18px;
+}
+.owner-info a {
+	color: #403f3f;
+}
+.owner-info a i{
+	margin-right: 5px;
+}
+.similar-home {
+	background-color: white;
+	padding: 25px;
+	margin-top: 35px;
+	overflow: hidden;
+}
+.similar-home:hover{
+	box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.2), 0 0px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.similar-home h2 {
+	text-transform: capitalize;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.single-similar-home {
+	position: relative;
+	margin-bottom: 20px;
+	transition: 0.5s;
+}
+.single-similar-home::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	top: 0;
+	left: 0;
+	opacity: 0.5;
+}
+.single-similar-home img {
+	width: 100%;
+	height: 150px;
+}
+.single-similar-home-info {
+	position: absolute;
+	content: "";
+	top: 45%;
+	left: 0;
+	padding: 0 10px;
+}
+.single-similar-home-info h3 {
+	color: white;
+	text-transform: capitalize;
+	font-size: 24px;
+}
+.single-similar-home-info p {
+	font-size: 26px;
+}
+.single-similar-home-info p span{}
+.single-similar-home-hover {
+	position: absolute;
+	content: "";
+	bottom: -100%;
+	left: 0;
+	background-color: #b9213e;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	visibility: hidden;
+	transition: 0.5s;
+}
+.single-similar-home-hover a {
+	display: block;
+	height: 100%;
+	padding: 25% 0;
+	color: white;
+	text-transform: uppercase;
+}
+.single-similar-home-hover a {
+	text-decoration:none;
+}
+.single-similar-home:hover .single-similar-home-hover {
+	visibility: visible;
+	transition: 0.5s;
+	bottom: 0;
+}
+.home-description {
+}
+.property-description {
+	background-color: white;
+	padding: 30px 40px;
+	margin-bottom: 35px;
+	transition: 0.5s;
+}
+.property-description:hover {
+	box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.2), 0 0px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.property-description h2 {
+	text-transform: capitalize;
+	font-size: 24px;
+	border-bottom: 1px solid #c4c2c2;
+	padding-bottom: 10px;
+}
+.property-description p {
+	padding-top: 5px;
+	text-align: left;
+	font-size: 16px;
+	color: #403f3f;
+	line-height: 28px;
+}
+.property-description ul{}
+.property-description ul li {
+	list-style: none;
+	padding-top: 3px;
+	text-transform: capitalize;
+}
+.property-description ul li b {
+	margin-right: 5px;
+}
+.property-description ul li i {
+	color: #656566;
+	margin-right: 5px;
 }
