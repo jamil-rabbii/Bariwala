@@ -98,11 +98,11 @@
 			<div class="container">
 				<div class="row">
 					@foreach($data as $row)
-					<div class="col-lg-6 col-sm-12">
+					<div class="col-lg-4 col-md-6 col-sm-12">
 						<div class="single-result">
-							<!--<img src="{{ asset('advertisement/img/'.$row->featureimg) }}" alt="" />-->
-
-							<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
+							<div class="single-result-img">
+								<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
+							</div>
 							<div class="house-info">
 								<div class="row">
 									<div class="col-lg-8 col-sm-6">
@@ -130,7 +130,7 @@
 									</div>
 									<div class="col-lg-6">
 										<div class="info-btm-right">
-											<a class="border-btn" href="#">details</a>
+											<a class="border-btn" href="{{url('/view_post',$row->id) }}">details</a>
 										</div>
 									</div>
 								</div>

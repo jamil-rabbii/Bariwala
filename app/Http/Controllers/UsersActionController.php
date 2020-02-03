@@ -63,6 +63,21 @@ class UsersActionController extends Controller
     }
 	
 	
+	//delete own post
+	public function user_del_post($id)
+    {
+		$data = Advertisementproparty::find($id);
+        // previous file delete
+            $file = public_path('assets/img/'.$data->featureimg);
+            if(file_exists($file)){
+                unlink($file);
+            }
+            // previous file delete
+        $data->delete();
+
+        return redirect()->back();
+	}
+	
 	
 }
 

@@ -41,5 +41,19 @@ class FrontViewController extends Controller
         return view('frontView.home.home')->with(['data'=>$data]);
        // echo $data;
     }
+    public function view_post($id)
+    {
+		$data = Advertisementproparty::where('id', $id )->get();
+		
+		foreach ($data as $passid)
+			$postman = $passid->addid;
+			$room_no = $passid->room;
+			$rentfor = $passid->rentfor;
+			$city = $passid->city;
+		$user_id = Auth::user()::where('id', $postman)->get();
+		$similar_home = Advertisementproparty::where([['city', '=', $city],['room', '>=', $room_no],['rentfor', '=', $rentfor],])->limit(3)->get();
+			//echo $similar_home;
+        return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home]);
+    }
 
 }

@@ -9,7 +9,13 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="headerr-login">
+							@guest
+								@if (Route::has('register'))
 								<a href="/login">log in<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+								@endif
+								@else
+								<a href="/login">My Profile<i class="fa fa-user" aria-hidden="true"></i></a>
+							@endguest
 							</div>
 						</div>
 					</div>

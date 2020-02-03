@@ -22,6 +22,8 @@ Route::get('/user/add_property', 'FrontViewController@add_pro')->name('home');
 Route::get('/user/own_post', 'FrontViewController@own_post')->name('home');
 Route::get('/user/search', 'FrontViewController@user_search')->name('home');
 Route::get('/user/bookmark', 'FrontViewController@bookmark')->name('home');
+Route::get('/user_del_post/{id}', 'UsersActionController@user_del_post');
+Route::get('/view_post/{id}', 'FrontViewController@view_post');
 Route::get('/', 'FrontViewController@all_post')->name('home');
 //Route::get('/home','HomeController@index');
 Auth::routes(['verify'=>true]);
