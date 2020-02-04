@@ -21,7 +21,9 @@ class CreateAdvertisementpropartiesTable extends Migration
             $table->string('rentalperiod',100);
             $table->integer('price');
             $table->integer('room');
-            $table->string('featureimg',200);
+            $table->string('featureimg',200)->nullable();
+            $table->string('num_plate',200)->nullable();
+            $table->string('other_img',200)->nullable();
             $table->longText('description');
             $table->string('location',200);
             $table->string('city',100);

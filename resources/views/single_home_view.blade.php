@@ -4,6 +4,10 @@
 	Bariwala
 @endsection
 
+@section('css')
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+@endsection
+
 @section('content')
 	
 						<div class="col-lg-6 col-md-6 col-sm-12">
@@ -59,11 +63,45 @@
 					
 					<div class="home-view-banner-area">
 						<div class="number-plate">
-							<img src="{{ asset('assets/img/residia_nishi_azabu.jpg') }}" alt="" />
+							<img src="{{ asset('assets/img/upload/'.$row->num_plate) }}" alt="" />
 						</div>
 						<div class="home-view-banner">
-							<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators
+							<ol class="carousel-indicators">
+							  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							  <li data-target="#myCarousel" data-slide-to="1"></li>
+							  <li data-target="#myCarousel" data-slide-to="2"></li>
+							  <li data-target="#myCarousel" data-slide-to="3"></li>
+							  <li data-target="#myCarousel" data-slide-to="4"></li>
+							</ol>
+						 -->
+						<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+							  <div class="item active">
+								<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
+							  </div>
+							@foreach (explode('|', $row->other_img) as $image)
+							  <div class="item">
+								<img src="{{ asset('assets/img/upload/other_img/'.$image) }}" alt="" />
+							  </div>
+							@endforeach
+							</div>
+						<!-- Left and right controls -->
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+							  <span style="color:white;" class="glyphicon glyphicon-chevron-left"></span>
+							  <span style="color:white;" class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next">
+							  <span style="color:white;" class="glyphicon glyphicon-chevron-right"></span>
+							  <span style="color:white;" class="sr-only">Next</span>
+							</a>
 						</div>
+						</div>
+						
+						
+						
+						
 					</div>
 				</div>
 			</div>
@@ -136,24 +174,7 @@
 @endsection
 
 @section('js_script')
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/js/main.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.slicknav.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-		<script type="text/javascript" src="assets/js/typed.js"></script>
-		
-		<script type="text/javascript">
-			//type	  
-			  var typed = new Typed(".element", {
-				strings: [
-					"the best deal",
-					"for you..."
-					],
-			typeSpeed:50,
-			backSpeed:50,
-			loop:true
-		});
+	<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		</script>
 @endsection

@@ -572,6 +572,7 @@ span {
 .intro-title h1 {
 	font-size: 44px;
 	font-family: initial;
+	text-transform: capitalize;
 }
 .intro-title p {
 	color: gray;
@@ -600,6 +601,7 @@ span {
 .amount h2 {
 	padding: 23px 0;
 	text-align: left;
+	font-size: 28px;
 }
 .add-cart{}
 .add-cart a {
@@ -609,6 +611,7 @@ span {
 	text-transform: uppercase;
 	border-radius: 15px;
 	float: right;
+	font-size: 14px;
 }
 .add-cart a:hover {
 	text-decoration: none;
@@ -652,6 +655,7 @@ span {
 }
 .owner-info a {
 	color: #403f3f;
+	font-size: 12px;
 }
 .owner-info a i{
 	margin-right: 5px;
@@ -761,6 +765,7 @@ span {
 	list-style: none;
 	padding-top: 3px;
 	text-transform: capitalize;
+	font-size: 14px;
 }
 .property-description ul li b {
 	margin-right: 5px;
@@ -768,4 +773,8 @@ span {
 .property-description ul li i {
 	color: #656566;
 	margin-right: 5px;
+}
+.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+	line-height: 1;
+	height: 450px;
 }
