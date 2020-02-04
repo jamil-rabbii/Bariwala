@@ -120,30 +120,9 @@
 								<div class="row">
 									<div class="col-md-3 col-sm-12">
 										<ul>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-										</ul>
-									</div>
-									<div class="col-md-3 col-sm-12">
-										<ul>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-										</ul>
-									</div>
-									<div class="col-md-3 col-sm-12">
-										<ul>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-										</ul>
-									</div>
-									<div class="col-md-3 col-sm-12">
-										<ul>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
-											<li><i class="fa fa-check-square" aria-hidden="true"></i> Lawn</li>
+										@foreach (explode('|', $row->otherfeatures) as $otherfeatures)
+											<li><i class="fa fa-check-square" aria-hidden="true"></i> {{$otherfeatures}}</li>
+										@endforeach
 										</ul>
 									</div>
 								</div>
