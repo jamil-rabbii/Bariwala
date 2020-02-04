@@ -32,6 +32,36 @@ class UsersActionController extends Controller
 
             $request->featured_image->move('assets/img',$filename);
         }
+		//numplate
+        $this->validate($request,[
+          'num_plate'     => '
+             required|image|mimes:jpeg,png,jpg,gif|max:2028'
+         ]);
+		if ($request->hasFile('num_plate')) {
+
+            $extension = $request->num_plate->extension();
+            $filename =  md5(date('Y-m-d H:i:s'));
+            $filename = $filename.'.'.$extension;
+
+            $table->num_plate = $filename;
+
+            $request->num_plate->move('assets/img/upload',$filename);
+        }
+		//other img
+		
+		$other_img=array();
+		if($files=$request->file('other_img')){
+			foreach($files as $file){
+				$original=$file->getClientOriginalName();
+				$name =  md5(date('Y-m-d H:i:s'));
+				$name = $name.$original.'.'.'jpg';
+				$file->move('assets/img/upload/other_img',$name);
+				$other_imgs[]=$name;
+				
+				$table->other_img = implode("|",$other_imgs);
+			}
+		}
+		
         $table->description = $request->description;
         $table->location = $request->location;
         $table->city = $request->city;

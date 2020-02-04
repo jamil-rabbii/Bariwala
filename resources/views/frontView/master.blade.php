@@ -19,6 +19,7 @@
 		<!--Slick Nav CSS-->
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slicknav.min.css') }}"/>
 		<!--Bootstrap CSS-->
+		@yield('css')
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}"/>
 		<!--My CSS-->
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"/>

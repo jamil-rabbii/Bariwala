@@ -27,7 +27,7 @@
 									<div class="search-user-form">
 										
 										<form action="/insert" method="post" enctype="multipart/form-data">
-										@csrf
+										{{csrf_field()}}
 											<div class="form-sec row">
 												<h3>Basic Information</h3>
 													@if(count($errors) >0)
@@ -93,6 +93,15 @@
 												<div class="form-group col-md-4">
 													<label for="FeaturedImage">Featured Image * </label>
 													<input type="file" class="form-control" id="featured_image" name="featured_image" placeholder="image">
+												</div>
+												<div class="form-group col-md-4">
+													<label for="">Namplate Image * </label>
+													<input type="file" class="form-control" id="num_plate" name="num_plate" placeholder="image">
+												</div>
+												<div class="form-group col-md-4">
+													<label for="">Other Images * </label>
+													<input type="file" class="form-control" id="other_img" name="other_img[]" placeholder="image" multiple>
+													<p style="font-size:12px;text-transform:none;">Upload at least 2 image</p>
 												</div>
 												<div class="form-group col-md-12">
 													<label for="description">Description * </label>
