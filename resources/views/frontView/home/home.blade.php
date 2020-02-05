@@ -8,7 +8,7 @@
 	
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="submit">
-								<a class="box-btn" href="#"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;margin-left:0px;"></i>advertise home</a>
+								<a class="box-btn" href="/login"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;margin-left:0px;"></i>advertise home</a>
 							</div>
 						</div>
 					</div>
@@ -139,6 +139,7 @@
 					</div>
 					@endforeach
 				</div>
+			<p style="color:blue;text-align:center;">	{{ $data->links() }} </p>
 			</div>
 		</section>
 <!--OUR INFO SECTION START-->

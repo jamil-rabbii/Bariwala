@@ -46,13 +46,13 @@
 											</td>
 											<td>
 												<div class="ex-date">
-													<p>30 December, 2018</p>
+													<p>18 January, 2020</p>
 												</div>
 											</td>
 											<td>
 												<div class="user-post-table-link">
-													<a class="text-warning" href="{{url('/view_post',$row->id) }}"><i class="fa fa-eye" aria-hidden="true"></i>view</a>
-													<a class="text-danger" href="{{url('/user_del_post',$row->id) }}"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
+													<a class="text-warning" href="{{url('/view_post',$row->id) }}"><i class="fa fa-eye" aria-hidden="true"></i>View</a>
+													<a class="text-danger" href="{{url('/user_del_post',$row->id) }}"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
 												</div>
 											</td>
 										</tr>

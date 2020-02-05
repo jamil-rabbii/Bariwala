@@ -60,8 +60,10 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
+								<a href="/">
 								<!--<a href="#home"><span>land</span>load</a>-->
 								<img src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(7).png')}}" alt="" />
+								</a>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
