@@ -550,9 +550,10 @@ span {
 .users-bookmark-page table tbody tr{}
 .users-bookmark-page table tbody tr td{}
 .users-bookmark-page table tbody tr td img {
-	width: 100%;
-	margin-right: -390px;
+	width: 300px;
+	margin-right: -45px;
 	border-radius: 20px;
+	height: 180px;
 }
 
 
@@ -616,6 +617,18 @@ span {
 .add-cart a:hover {
 	text-decoration: none;
 	background-color: #b9213e;
+}
+.remove-cart a{
+	background-color: #b9213e;
+	color: white;
+	padding: 15px 30px;
+	text-transform: uppercase;
+	border-radius: 15px;
+	float: right;
+	font-size: 14px;
+}
+.remove-cart a:hover {
+	text-decoration: none;
 }
 .home-view-banner-area{}
 .number-plate {

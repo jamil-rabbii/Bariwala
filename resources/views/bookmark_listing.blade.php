@@ -31,60 +31,26 @@
 										</tr>
 									</thead>
 									<tbody>
+									@foreach($data as $row)
 										<tr>
 											<td>
-												<img src="{{ asset('assets/img/dream_house_take_away.jpg') }}" alt="" />
+												<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
 											</td>
 											<td>
 												<div class="user-house-info">
-													<h2>Weston Hightpointe Place</h2>
-													<p><i></i>157 West 57th St, 77 - Central Park South, NYC</p>
-													<h3><span>&#2547; 6000</span></h3>
+													<h2>{{$row->title}}</h2>
+													<p><i class="fa fa-location-arrow" aria-hidden="true"></i>{{$row->location}}</p>
+													<h3><span>&#2547; {{$row->price}}</span></h3>
 												</div>
 											</td>
 											<td>
 												<div class="user-post-table-link">
-													<a class="text-warning" href="#"><i class="fa fa-eye" aria-hidden="true"></i>view</a>
-													<a class="text-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
+													<a class="text-warning" href="{{url('/view_post',$row->ad_post_id) }}"><i class="fa fa-eye" aria-hidden="true"></i>view</a>
+													<a class="text-danger" href="{{url('/user_remove_bookmark',$row->id) }}"><i class="fa fa-trash" aria-hidden="true"></i>remove</a>
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td>
-												<img src="{{ asset('assets/img/residia_nishi_azabu.jpg') }}" alt="" />
-											</td>
-											<td>
-												<div class="user-house-info">
-													<h2>Weston Hightpointe Place</h2>
-													<p><i></i>157 West 57th St, 77 - Central Park South, NYC</p>
-													<h3><span>&#2547; 6000</span></h3>
-												</div>
-											</td>
-											<td>
-												<div class="user-post-table-link">
-													<a class="text-warning" href="#"><i class="fa fa-eye" aria-hidden="true"></i></i>view</a>
-													<a class="text-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="{{ asset('assets/img/dream_house_take_away.jpg') }}" alt="" />
-											</td>
-											<td>
-												<div class="user-house-info">
-													<h2>Weston Hightpointe Place</h2>
-													<p><i></i>157 West 57th St, 77 - Central Park South, NYC</p>
-													<h3><span>&#2547; 6000</span></h3>
-												</div>
-											</td>
-											<td>
-												<div class="user-post-table-link">
-													<a class="text-warning" href="#"><i class="fa fa-eye" aria-hidden="true"></i>view</a>
-													<a class="text-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
-												</div>
-											</td>
-										</tr>
+									@endforeach
 									</tbody>
 								</table>
 							</div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Advertisementproparty;
+use App\Userbookmark;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -32,7 +33,8 @@ class FrontViewController extends Controller
 	
 	public function bookmark()
     {
-        return view('bookmark_listing');
+		$data = Userbookmark::where('user_id', Auth::user()->id )->get();
+        return view('bookmark_listing')->with(['data'=>$data]);
     }
     public function all_post()
     {
@@ -45,7 +47,15 @@ class FrontViewController extends Controller
     public function view_post($id)
     {
 		$data = Advertisementproparty::where('id', $id )->get();
-		
+		$bookmark_data = Userbookmark::where([['user_id', '=', Auth::user()->id],['ad_post_id', '=', $id],])->get();
+		if($bookmark_data=='[]'){
+			$book = 0;
+		}
+		else{
+			foreach($bookmark_data as $row){
+				$book = $row->id;
+			}
+		}
 		foreach ($data as $passid)
 			$postman = $passid->addid;
 			$room_no = $passid->room;
@@ -54,7 +64,7 @@ class FrontViewController extends Controller
 		$user_id = Auth::user()::where('id', $postman)->get();
 		$similar_home = Advertisementproparty::where([['city', '=', $city],['room', '>=', $room_no],['rentfor', '=', $rentfor],])->limit(3)->get();
 			//echo $similar_home;
-        return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home]);
+        return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home,'book'=>$book]);
     }
 
 }
