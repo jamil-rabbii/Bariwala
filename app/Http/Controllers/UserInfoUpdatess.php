@@ -28,7 +28,7 @@ class UserInfoUpdatess extends Controller
     		return Redirect()->route('login')->with('successMez','Your password has been changed,now log in');
 			}
 			else{
-    		return Redirect()->back()->with('ErrorMsz','new password and conferm password does not match,please try again');
+    		return Redirect()->back()->with('ErrorMsz','new password and confirm password does not match,please try again');
 			}
     	}else{
     		return Redirect()->back()->with('ErrorMsz','Old password does not match,please try again');

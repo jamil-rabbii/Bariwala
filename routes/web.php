@@ -35,7 +35,7 @@ Route::get('/', 'FrontViewController@all_post')->name('home');
 Auth::routes(['verify'=>true]);
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change')->middleware('AuthenticateMiddleware');
-Route::post('/password.update','UserInfoUpdatess@password_update')->name('password-update');
+Route::POST('/password.update','UserInfoUpdatess@password_update')->name('password-update');
 
 // google
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
