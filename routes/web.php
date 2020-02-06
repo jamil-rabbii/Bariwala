@@ -25,9 +25,9 @@ Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 	Route::get('/user/search', 'FrontViewController@user_search')->name('home');
 	Route::get('/user/bookmark', 'FrontViewController@bookmark')->name('home');
 	Route::get('/user_del_post/{id}', 'UsersActionController@user_del_post');
+	Route::get('/user_bookmark_post/{id}', 'UsersActionController@user_bookmark_post');
+	Route::get('/user_remove_bookmark/{id}', 'UsersActionController@user_remove_bookmark');
 	Route::get('/view_post/{id}', 'FrontViewController@view_post');
-
-
 });
 
 Route::get('/', 'FrontViewController@all_post')->name('home');

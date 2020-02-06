@@ -54,9 +54,15 @@
 								</div>
 							</div>
 							<div class="col-md-2 col-sm-12">
-								<div class="add-cart">
-									<a href="#">bookmark</a>
+							@if($book==0)
+								<div id="bookmark" class="add-cart">
+									<a id="bookmark_link" href="{{url('/user_bookmark_post',$row->id) }}">bookmark</a>
 								</div>
+							@else
+								<div id="remove_bookmark" class="remove-cart">
+									<a id="remove_bookmark_link" href="{{url('/user_remove_bookmark',$book) }}">remove</a>
+								</div>
+							@endif
 							</div>
 						</div>
 					</div>

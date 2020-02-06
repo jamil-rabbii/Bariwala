@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Advertisementproparty;
+use App\Userbookmark;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -54,7 +56,7 @@ class UsersActionController extends Controller
 			foreach($files as $file){
 				$original=$file->getClientOriginalName();
 				$name =  md5(date('Y-m-d H:i:s'));
-				$name = $name.$original.'.'.'jpg';
+				$name = $name.$original;
 				$file->move('assets/img/upload/other_img',$name);
 				$other_imgs[]=$name;
 				
@@ -103,6 +105,34 @@ class UsersActionController extends Controller
                 unlink($file);
             }
             // previous file delete
+        $data->delete();
+
+        return redirect()->back();
+	}
+	
+	
+	//bookmark post
+	public function user_bookmark_post($id)
+    {
+		$data = Advertisementproparty::where('id', $id )->get();
+		foreach($data as $ku){
+			//$post_title = $ku->title;
+			$table = new Userbookmark();
+			$table->user_id = Auth::user()->id;
+			$table->ad_post_id = $id;
+			$table->title = $ku->title;
+			$table->location = $ku->location;
+			$table->price = $ku->price;
+			$table->featureimg = $ku->featureimg;
+			$table->save();
+		}
+		return redirect()->back();
+	}
+	
+	// remove bookmark post
+	public function user_remove_bookmark($id)
+    {
+		$data = Userbookmark::find($id);
         $data->delete();
 
         return redirect()->back();
