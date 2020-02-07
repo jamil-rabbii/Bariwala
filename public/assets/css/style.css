@@ -447,6 +447,62 @@ span {
 
 
 
+/*========================================USERS OWN INFO==========================================*/
+
+
+.user-own-info-area {
+	margin: 45px 10px;
+}
+.user-own-info {
+	box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.2), 0 0px 15px 0 rgba(0, 0, 0, 0.19);
+	padding: 40px 0;
+}
+.user-own-info img {
+	width: 35%;
+	margin-bottom: 20px;
+}
+.user-own-info p {
+	text-align: center;
+	font-size: 14px;
+	text-transform: capitalize;
+	line-height: 10px;
+}
+.user-own-info p b{}
+.update-btn {
+	background-color: #132750;
+	color: white;
+	padding: 10px 40px;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-top: 10px;
+	width: 130px;
+	transform: translate(50%,50%);
+	margin-left: 40px;
+}
+.update-form{}
+.update-form form{}
+.update-form form img {
+	width: 90px;
+	margin-bottom: 20px;
+}
+.update-form form input {
+	width: 100%;
+	border: 0;
+	border-bottom: 2px solid #c8c4c4;
+}
+.update-form form input[type="file"] {
+	border-bottom: 0;
+}
+.update-form form .radio label{}
+.update-form form .radio label input {
+	width: 15px;
+}
+.update-form form .radio label p {
+	float: right;
+}
+
+
+
 /*========================================USER ADD PROPERTY==========================================*/
 
 .search-user-form {
