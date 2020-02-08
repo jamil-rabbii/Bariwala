@@ -26,8 +26,8 @@
 									<div class=" col-sm-12 col-md-4">
 										<div class="user-own-info">
 											<img src="{{ asset('assets/img/pofile.jpg') }}" class="rounded mx-auto d-block" alt="" />
-											<p><b>name :</b>User name</p>
-											<p><b>email :</b>user@.com</p>
+											<p><b>name :</b>{{ Auth::user()->name }}</p>
+											<p><b>email :</b>{{ Auth::user()->name }}</p>
 											<p><b>age :</b>22</p>
 											<p><b>gnder :</b>male</p>
 											<!-- Button trigger modal -->
