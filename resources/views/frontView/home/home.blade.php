@@ -139,7 +139,13 @@
 					</div>
 					@endforeach
 				</div>
-			<p style="color:blue;text-align:center;">	{{ $data->links() }} </p>
+				<div class="pagination d-flex justify-content-center">
+					<div class="row">
+						<div class="col-6">
+							<p class="" style="color:blue;text-align:center;">	{{ $data->links() }} </p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 <!--OUR INFO SECTION START-->

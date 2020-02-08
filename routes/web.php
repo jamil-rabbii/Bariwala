@@ -20,6 +20,7 @@
 Route::get('/','FrontViewController@index');
 
 Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
+	Route::get('/user/info', 'FrontViewController@users_info');
 	Route::get('/user/add_property', 'FrontViewController@add_pro')->name('home');
 	Route::get('/user/own_post', 'FrontViewController@own_post')->name('home');
 	Route::get('/user/search', 'FrontViewController@user_search')->name('home');

@@ -14,6 +14,11 @@ class FrontViewController extends Controller
 		return view('frontView.home.home');
 	}
 	
+	public function users_info()
+    {
+        return view('user_info_data');
+    }
+	
 	public function add_pro()
     {
         return view('add_property');
