@@ -45,3 +45,5 @@ Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 Route::POST('/insert','UsersActionController@save');
 Route::POST('/usersr_search_result','UsersActionController@users_search_result');
+//Route::get('/user/info_add/{id}','UsersActionController@edit_page');
+Route::post('/user/info_add','UsersActionController@edituserinfo');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Advertisementproparty;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -107,7 +108,42 @@ class UsersActionController extends Controller
 
         return redirect()->back();
 	}
-	
-	
+/*
+    public function edit_page($id){
+        $table = User::find(Auth::id);
+        return view('user_info_data')->with(['table' => $table]);
+    }
+	*/
+	public function edituserinfo(Request $request)
+    {
+          $table = Auth::user()::find((Auth::id()));
+          $table->name = $request->username;
+          $table->age = $request->age;
+
+            $this->validate($request,[
+              'avatar'     => '
+                 image|mimes:jpeg,png,jpg,gif|max:2028'
+             ]);
+              if ($request->hasFile('avatar')) {
+                // previous file delete
+                    $file = public_path('assets/img/upload/profile/'.$table->avatar);
+                    if(file_exists($file)){
+                        unlink($file);
+                    }
+                   
+                    // previous file delete
+                    $extension = $request->avatar->extension();
+                    $filename =  md5(date('Y-m-d H:i:s'));
+                    $filename = $filename.'.'.$extension;
+
+                    $table->avatar = $filename;
+
+                    $request->avatar->move('assets/img/upload/profile',$filename);
+            }
+        $table->gender = $request->gender;
+        $table->save();
+        return redirect()->back();
+
+    }
 }
 
