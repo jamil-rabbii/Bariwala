@@ -86,7 +86,7 @@ class UsersActionController extends Controller
 		$searching_for = $request->searching_for;
 
 
-         $data = Advertisementproparty::where([['city', '=', $city],['price', '<=', $max_price],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],])->get();
+         $data = Advertisementproparty::where([['city', '=', $city],['price', '<=', $max_price],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],['aprove', '=', '1']])->get();
         return view('users_search_result')->with(['data'=>$data]);
         //echo $data;
 		//echo $city,$max_price,$bedrooms,$searching_for;

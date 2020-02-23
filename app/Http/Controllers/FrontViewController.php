@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class FrontViewController extends Controller
 {
     public function index(){
-		return view('frontView.home.home');
+		return view('frontView.home.home')->with(['data'=>$data]);
 	}
 	
 	public function users_info()
@@ -43,10 +43,8 @@ class FrontViewController extends Controller
     }
     public function all_post()
     {
-    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->get();
-       // $data = Advertisementproparty::all();
-        $data = Advertisementproparty::paginate(6);
-        //$data = DB::table('advertisementproparty')->get();
+    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(6);
+		//$data = Advertisementproparty::paginate(6);
         return view('frontView.home.home')->with(['data'=>$data]);
        // echo $data;
     }
