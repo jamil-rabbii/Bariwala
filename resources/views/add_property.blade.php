@@ -45,7 +45,7 @@
 
 													@if(session('insertsuccess'))
 						                                <div class="alert alert-success alert-dismissable fade show" role="alert">
-						                                    <b>Great!</b> {{session('insertsuccess')}}
+						                                    <b>Thanks!</b> {{session('insertsuccess')}}
 						                                    <button type="button" class="close" data-dismiss="alert" aria-label="close" ><span aria-hidden="true">&times;</span>
 						                                    </button>
 						                                </div>

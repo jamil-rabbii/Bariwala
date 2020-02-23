@@ -37,11 +37,15 @@
 							<div class="col-md-3 col-sm-6">
 								<div class="rooms-info">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-4">
 											<h2>{{$row->bedroom}}</h2>
 											<p>beds</p>
 										</div>
-										<div class="col-6">
+										<div class="col-4">
+											<h2><i class="fas fa-eye"></i></h2>
+											<p>views</p>
+										</div>
+										<div class="col-4">
 											<h2>{{$row->bathroom}}</h2>
 											<p>baths</p>
 										</div>
@@ -118,7 +122,7 @@
 					<div class="col-md-3">
 						<div class="owner-info">
 							@foreach($user_id as $user_info)
-							<img src="{{ asset('assets/img/pofile.jpg') }}" alt="" />
+							<img src="{{ asset('assets/img/upload/profile/'.$user_info->avatar)}}" alt="" />
 							<h3>{{$user_info->name}}</h3>
 							<a href="#"><i></i>{{$user_info->email}}</a>
 							@endforeach

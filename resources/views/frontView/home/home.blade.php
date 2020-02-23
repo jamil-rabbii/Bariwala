@@ -25,8 +25,14 @@
 							<h1>descover your perfect home</h1>
 							<h3><!--save our date--><span class="element"></span></h3>
 							<div class="log-reg-link mx-auto">
+							@guest
+								@if (Route::has('register'))
 								<a class="border-reg-btn" href="/register">register</a>
 								<a class="box-btn" href="/login">log in</a>
+								@endif
+								@else							
+								<!--<a class="box-btn" href="/login">log in</a> -->
+							@endguest
 							</div>
 						</div>
 					</div>

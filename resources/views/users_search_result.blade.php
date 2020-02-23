@@ -23,7 +23,7 @@
 					<div class="row">
 						<div class="col-lg-10">
 							<!--<label for="sort">sorted by :</label>-->
-							<p>sorted by :</p>
+							<p>Sorted By :</p>
 						</div>
 						<div class="col-lg-2">
 							<select class="form-control" id="">

@@ -43,7 +43,7 @@ class FrontViewController extends Controller
     }
     public function all_post()
     {
-    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(6);
+    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(3);
 		//$data = Advertisementproparty::paginate(6);
         return view('frontView.home.home')->with(['data'=>$data]);
        // echo $data;

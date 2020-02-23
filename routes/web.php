@@ -39,6 +39,7 @@ Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 	Route::get('/admin/make_admin/{id}', 'AdminActionController@make_admin');
 	Route::get('/admin/remove_admin/{id}', 'AdminActionController@remove_admin');
 	Route::get('/admin/see_alladmin/', 'AdminActionController@see_alladmin');
+	Route::get('/admin/count/', 'AdminActionController@countss');
 });
 
 Route::get('/', 'FrontViewController@all_post')->name('home');

@@ -72,7 +72,7 @@ class UsersActionController extends Controller
         $table->otherfeatures = implode(", ",$request->extra_facilities);
         $table->addid = $request->add_id;
 		$table->save();
-        return Redirect()->back()->with('insertsuccess',' your advertisement for rent house has been successfully posted');
+        return Redirect()->back()->with('insertsuccess',' your request for advertise your house needs admin confirmaion in order to be publish.');
 		//return redirect()->to('/');
         //echo $table;
     }

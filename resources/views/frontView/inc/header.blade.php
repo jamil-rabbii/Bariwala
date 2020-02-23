@@ -4,8 +4,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<a href="tel:+8801712345678"><i class="fa fa-phone" aria-hidden="true"></i>(+88) 01712345678</a>
-							<a href="mailto:bariwala@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>realland@gmail.com</a>
+							<a href="tel:+8801828020089"><i class="fa fa-phone" aria-hidden="true"></i>(+88) 01771880355</a>
+							<a href="mailto:bariwala@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>bariwala@gmail.com</a>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="headerr-login">
@@ -26,8 +26,9 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
+								<a href="/">
 								<!--<a href="#home"><span>land</span>load</a>-->
 								<img src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(7).png')}}" alt="" />
-								
+								</a>
 							</div>
 						</div>

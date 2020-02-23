@@ -45,7 +45,7 @@
 											<p><b>gender :</b>{{ Auth::user()->gender }}</p>
 											<!-- Button trigger modal -->
 											<button type="button" class="btn btn-center update-btn" data-toggle="modal" data-target="#exampleModalCenter">
-											  Add More
+											  Update
 											</button>
 										</div>
 									</div>
