@@ -17,7 +17,8 @@ span {
 	padding: 100px 0;
 }
 .box-btn {
-	background-color: #19C43F;
+	/*background-color: #2784aa;*/
+	background-image: linear-gradient(-90deg, #27aa54, #2784aa);
 	color: white;
 	padding: 10px 20px;
 	border-radius: 5px;
@@ -26,7 +27,7 @@ span {
 	margin-left: -15px;
 }
 .box-btn:hover {
-	background-color: #E58904;
+	background-image: linear-gradient(-90deg, #12953F, #126F95);
 	color: white;
 	text-decoration: none;
 }
@@ -35,6 +36,20 @@ span {
 }
 .box-btn-submit:hover {
 	background-color: #CC7B05;
+}
+.border-reg-btn {
+	color: white;
+	border: 2px solid;
+	border-image-source: linear-gradient(-90deg, #27aa54, #2784aa);
+	border-image-slice: 1;
+	padding: 8px 20px;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+.border-reg-btn:hover {
+	text-decoration: none;
+	color: white;
+	background-image: linear-gradient(-90deg, #27aa54, #2784aa);
 }
 .border-btn {
 	display: inline-block;
@@ -69,7 +84,6 @@ span {
 	right: 0;
 	transition: 0.5s;
 }
-
 /* HEADER */
 
 .header-area {
@@ -176,6 +190,14 @@ span {
 	color : white;
 }
 .single-banner i{}
+.log-reg-link {
+	width: 220px;
+	margin-top: 20px;
+}
+.log-reg-link a {
+	margin: 5px;
+	border-radius: 0;
+}
 
 
 /*SEARCHING SECTION START*/
@@ -683,8 +705,8 @@ span {
 	float: right;
 	font-size: 14px;
 }
-.remove-cart a:hover {
-	text-decoration: none;
+#remove_bookmark{
+	display: none;
 }
 .home-view-banner-area{}
 .number-plate {
@@ -847,3 +869,107 @@ span {
 	line-height: 1;
 	height: 450px;
 }
+/*comment sec*/
+.comment-area {
+	margin-top: 40px;
+}
+.panel-title a {
+	margin: 0 10px;
+}
+.panel-title a:hover {
+	text-decoration: none;
+}
+.panel-title a i {
+	margin-right: 5px;
+}
+.panel-title a i.fa-caret-down {
+	margin-left: 10px;
+}
+.single-comment a i.fa-caret-down {
+	margin-left: 10px;
+}
+.single-comment a i.fa-caret-up {
+	margin-left: 10px;
+}
+.single-comment{}
+.single-comment img {
+	width: 100%;
+	height: 60px;
+}
+.single-comment h2 {
+	font-size: 12px;
+	text-transform: capitalize;
+}
+.single-comment p {
+	font-size: 11px;
+}
+.single-comment a {
+	color: black;
+	text-decoration: none;
+}
+.single-comment a:hover {
+	text-decoration: none;
+	color: blue;
+}
+.comment-reply {
+	margin-left: 25px;
+}
+.comment-area button {
+	padding: 5px 15px;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+/*========================================ADMIN SEE ALL USERS==========================================*/
+
+.admin-pannel-left {
+	border-right: 1px solid #b6b7b9;
+	height: 100%;
+	margin-left: -15px;
+}
+.admin-pannel-left ul{}
+.admin-pannel-left ul li {
+	list-style: none;
+	text-align: left;
+	text-transform: capitalize;
+	border-bottom: 1px solid #b6b7b9;
+}
+.admin-pannel-left ul li:hover {
+	background-color: #dedee3;
+}
+.admin-pannel-left ul li a {
+	padding: 10px 20px;
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+.see-all-users-area {
+	padding: 45px 0;
+}
+.see-all-users{}
+.see-all-users table {}
+.see-all-users table tr {
+	
+}
+.see-all-users table tr td {}
+.see-all-users-img {
+	width: 80px;
+}
+.see-all-users-img img {
+	width: 100%;
+	height: 65px;
+}
+
+
+
+
+
+
+
+
+

@@ -164,7 +164,7 @@
 								<div class="row">
 									<div class="col-md-3 col-sm-12">
 										<ul>
-										@foreach (explode('|', $row->otherfeatures) as $otherfeatures)
+										@foreach (explode(',', $row->otherfeatures) as $otherfeatures)
 											<li><i class="fa fa-check-square" aria-hidden="true"></i> {{$otherfeatures}}</li>
 										@endforeach
 										</ul>
@@ -182,5 +182,4 @@
 @section('js_script')
 	<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		</script>
 @endsection

@@ -126,10 +126,12 @@ class UsersActionController extends Controller
              ]);
               if ($request->hasFile('avatar')) {
                 // previous file delete
-                    $file = public_path('assets/img/upload/profile/'.$table->avatar);
-                    if(file_exists($file)){
-                        unlink($file);
-                    }
+                    if($table->avatar!='default.jpg'){
+						$file = public_path('assets/img/upload/profile/'.$table->avatar);
+						if(file_exists($file)){
+							unlink($file);
+						}
+					}
                    
                     // previous file delete
                     $extension = $request->avatar->extension();
