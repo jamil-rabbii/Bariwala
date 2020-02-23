@@ -41,7 +41,7 @@
 												  <td>{{$row->age}}</td>
 												  <td>
 													<a href="{{url('/admin/del_user',$row->id) }}" class="btn btn-danger">Delete</a>
-													@if($row->admin_ship==1)
+													@if($row->admin_ship!=1)
 													<a href="{{url('/admin/make_admin',$row->id) }}" class="btn btn-info">Make Admin</a>
 													@endif
 												  </td>

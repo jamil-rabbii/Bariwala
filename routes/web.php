@@ -49,8 +49,8 @@ Route::get('/', 'FrontViewController@all_post')->name('home');
 
 //Route::get('/home','HomeController@index');
 Auth::routes(['verify'=>true]);
-Route::get('/user_pannel', 'HomeController@index');
-Route::get('/home', 'AdminActionController@pending_post')->name('home');
+Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'AdminActionController@pending_post')->name('home');
 Route::get('/password-change','UserInfoUpdatess@pass')->name('password.change')->middleware('AuthenticateMiddleware');
 Route::POST('/password.update','UserInfoUpdatess@password_update')->name('password-update');
 

@@ -5,7 +5,7 @@
 									<li><a href="/Admin/allpost">All Post</a></li>
 									<li><a href="/Admin/alluser">Users</a></li>
 									<li><a href="/admin/see_alladmin/">Admins</a></li>
-									<li><a href="/user_pannel">User Mode</a></li>
+									<li><a href="/home">User Mode</a></li>
 								</ul>
 							</div>
 						</div>
