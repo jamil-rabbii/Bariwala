@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('age')->nullable();
             $table->string('avatar',200)->default('default.jpg')->nullable();
             $table->string('gender',100)->nullable();
+            $table->string('admin_ship',100)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

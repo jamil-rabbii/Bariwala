@@ -24,7 +24,10 @@
 							<h2>the best real estate deals</h2>
 							<h1>descover your perfect home</h1>
 							<h3><!--save our date--><span class="element"></span></h3>
-							<i></i>
+							<div class="log-reg-link mx-auto">
+								<a class="border-reg-btn" href="/register">register</a>
+								<a class="box-btn" href="/login">log in</a>
+							</div>
 						</div>
 					</div>
 				</div>
