@@ -7,6 +7,8 @@ use App\Userbookmark;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Session;
+use Illuminate\Database\Schema\Blueprint;
 
 class FrontViewController extends Controller
 {
@@ -43,7 +45,7 @@ class FrontViewController extends Controller
     }
     public function all_post()
     {
-    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(3);
+    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->latest()->paginate(6);
 		//$data = Advertisementproparty::paginate(6);
         return view('frontView.home.home')->with(['data'=>$data]);
        // echo $data;
@@ -51,6 +53,12 @@ class FrontViewController extends Controller
     public function view_post($id)
     {
 		$data = Advertisementproparty::where('id', $id )->get();
+		$view = Advertisementproparty::where('id', $id )->first();
+		$viewcount = 'view_'.$view->id;
+		if(!Session::has($viewcount)){
+			$view->increment('view_count');
+			Session::put($viewcount,1);
+		}
 		$bookmark_data = Userbookmark::where([['user_id', '=', Auth::user()->id],['ad_post_id', '=', $id],])->get();
 		if($bookmark_data=='[]'){
 			$book = 0;

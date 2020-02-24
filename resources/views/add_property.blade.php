@@ -215,7 +215,7 @@
 											<div class="form-sec row mt-4">
 												<div class="form-group">
 													<div class="col-sm-offset-2 col-sm-10">
-													  <button type="submit" class="btn box-btn box-btn-submit"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;"></i>published</button>
+													  <button type="submit" class="btn box-btn box-btn-submit"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;"></i>publish</button>
 													</div>
 												</div>
 											</div>

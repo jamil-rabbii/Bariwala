@@ -31,6 +31,7 @@ class CreateAdvertisementpropartiesTable extends Migration
             $table->integer('bathroom')->nullable();
             $table->string('parking',100)->nullable();
             $table->text('otherfeatures')->nullable();
+            $table->integer('view_count')->default(0);
             $table->unsignedBigInteger('addid')->nullable();
             $table->foreign('addid')->references('id')->on('users');
             $table->integer('aprove')->nullable();

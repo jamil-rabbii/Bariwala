@@ -42,8 +42,8 @@
 											<p>beds</p>
 										</div>
 										<div class="col-4">
-											<h2><i class="fas fa-eye"></i></h2>
-											<p>views</p>
+											<h2>{{$row->view_count}}</h2>
+											<p><i class="fas fa-eye"></i></p>
 										</div>
 										<div class="col-4">
 											<h2>{{$row->bathroom}}</h2>
