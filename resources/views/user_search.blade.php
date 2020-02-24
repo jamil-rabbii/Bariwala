@@ -46,7 +46,7 @@
 																</div>
 																<div class="col-lg-3 clo-md-3 col-sm-12">
 																	<div class="form-group">
-																		<label for="bedrooms">BEDROOMS</label>
+																		<label for="bedrooms">ROOMS</label>
 																		<input type="int" class="form-control" id="bedrooms" name="bedrooms">
 																	</div>
 																</div>

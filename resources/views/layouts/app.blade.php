@@ -50,7 +50,9 @@
 							<a href="mailto:bariwala@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>bariwala@gmail.com</a>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							
+							<div class="headerr-login">
+								<a href="/">Home<i class="fa fa-home" aria-hidden="true"></i></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -71,7 +73,6 @@
 						
 						
 						
-						
 
 		<nav class="navbar navbar-expand-md shadow-m">
                 
@@ -81,10 +82,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-
+					@yield('admin_mode')
+					<!-- <div class="btn-group float-left" role="group" aria-label="Basic example">
+					  <a href="/Admin/pending_post" class="btn btn-light">Adim Mode</a>
+					  <a href="/home" class="btn btn-secondary">User Mode</a>
+					</div> -->
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+						<div class="nav-img">
+							<img src="{{ asset('assets/img/upload/profile/'.Auth::user()->avatar)}}" alt="" />
+						</div>
                             <li class="nav-item dropdown">
                                 <a style="color:white;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

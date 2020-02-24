@@ -90,7 +90,67 @@
 														<option value="6">more than 5</option>
 													</select>
 												</div>
-												<div class="form-group col-md-4">
+												<div class="col-md-4">
+													<label class="text-capitalize" for="FeaturedImage">Add your Images here</label>
+													<div class="panel-group">
+													  <div class="panel panel-default">
+														<div class="panel-heading">
+														  <h4 class="panel-title">
+															<div class="" data-toggle="collapse" href="#collapse1"><span class="border border-secondary d-block p-1 bg-light text-secondary text-center">+</span></div>
+														  </h4>
+														</div>
+														<div id="collapse1" class="panel-collapse collapse">
+														  <ul class="list-group">
+															<li class="list-group-item">
+																<div data-toggle="collapse" href="#featured_image">
+																	<label for="FeaturedImage">Featured Image * </label>
+																	<input type="file" class="form-control panel-collapse collapse" id="featured_image" name="featured_image" placeholder="image">
+																</div>
+															</li>
+															<li class="list-group-item">
+																<div data-toggle="collapse" href="#num_plate">
+																	<label for="">Namplate Image * </label>
+																	<input type="file" class="form-control panel-collapse collapse" id="num_plate" name="num_plate" placeholder="image">
+																</div>
+															</li>
+															<li class="list-group-item">
+																<div data-toggle="collapse" href="#other_imgs">
+																	<label for="">Other Images * </label>
+																	<div class="panel-collapse collapse" id="other_imgs">
+																	<input type="file" class="form-control" id="other_img" name="other_img[]" placeholder="image" multiple>
+																	<p style="font-size:12px;text-transform:none;">Upload at least 2 image</p>
+																	</div>
+																</div>
+															</li>
+														  </ul>
+														</div>
+													  </div>
+													</div>
+												</div>
+												<!-- <div class="form-group col-md-4">
+													<label for="FeaturedImage">Add Image * </label>
+													<div class="panel-group">
+													  <div class="panel panel-default">
+														<div class="panel-heading">
+														  <h4 class="panel-title">
+															<a data-toggle="collapse" href="#collapse1">Collapsible list group</a>
+														  </h4>
+														</div>
+														<div id="collapse1" class="panel-collapse collapse">
+														  <ul class="list-group">
+															<li class="list-group-item">
+																<a data-toggle="collapse" href="#collapse2">Collapsible list group 1</a>
+															</li>
+															<li class="list-group-item">Two</li>
+															<li class="list-group-item">Three</li>
+														  </ul>
+														  <div class="panel-footer">Footer</div>
+														</div>
+													  </div>
+													</div>
+													
+												</div>
+												<div id="collapse2" class="form-group col-md-4 panel-collapse collapse">
 													<label for="FeaturedImage">Featured Image * </label>
 													<input type="file" class="form-control" id="featured_image" name="featured_image" placeholder="image">
 												</div>
@@ -102,7 +162,7 @@
 													<label for="">Other Images * </label>
 													<input type="file" class="form-control" id="other_img" name="other_img[]" placeholder="image" multiple>
 													<p style="font-size:12px;text-transform:none;">Upload at least 2 image</p>
-												</div>
+												</div> -->
 												<div class="form-group col-md-12">
 													<label for="description">Description * </label>
 													<textarea class="form-control" rows="5" id="description" name="description"></textarea>

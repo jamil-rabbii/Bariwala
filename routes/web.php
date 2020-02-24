@@ -29,7 +29,7 @@ Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 	Route::get('/user_del_post/{id}', 'UsersActionController@user_del_post');
 	Route::get('/user_bookmark_post/{id}', 'UsersActionController@user_bookmark_post');
 	Route::get('/user_remove_bookmark/{id}', 'UsersActionController@user_remove_bookmark');
-	Route::get('/view_post/{id}', 'FrontViewController@view_post');
+	//Route::get('/view_post/{id}', 'FrontViewController@view_post');
 	//Admin
 	Route::get('/Admin/pending_post', 'AdminActionController@pending_post');
 	Route::get('/admin/accept_pending/{id}', 'AdminActionController@accept_pending');
@@ -43,7 +43,7 @@ Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 });
 
 Route::get('/', 'FrontViewController@all_post')->name('home');
-
+Route::get('/view_post/{id}', 'FrontViewController@view_post');
 
 //admin_sec
 
