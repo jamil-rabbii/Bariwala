@@ -34,12 +34,8 @@
 	@yield('css')
 </head>
 <body>
+<!-- Authentication Links -->
     <div id="app">
-	<!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('register'))
-                            @endif
-                        @else
 						
 		<header class="header-area">
 			<div class="header-top">
@@ -69,11 +65,11 @@
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">
-						
-						
-						
-						
-
+						@guest
+                            @if (Route::has('register'))
+								@yield('link_reg_log')
+                            @endif
+						@else
 		<nav class="navbar navbar-expand-md shadow-m">
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -118,10 +114,11 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        
                     </ul>
                 </div>
         </nav>
+		@endguest
 						</div>
 					</div>
 				</div>

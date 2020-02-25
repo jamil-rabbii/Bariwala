@@ -58,7 +58,7 @@
 								</div>
 							</div>
 							<div class="col-md-2 col-sm-12">
-							@if($book==False)
+							@if($book==-1)
 							@elseif($book==0)
 								<div id="bookmark" class="add-cart">
 									<a id="bookmark_link" href="{{url('/user_bookmark_post',$row->id) }}">bookmark</a>
@@ -122,13 +122,13 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="owner-info">
-							@if($user_id != 0)
+						@if($user_id != NUll)
 							@foreach($user_id as $user_info)
 							<img src="{{ asset('assets/img/upload/profile/'.$user_info->avatar)}}" alt="" />
 							<h3>{{$user_info->name}}</h3>
 							<a href="#"><i></i>{{$user_info->email}}</a>
 							@endforeach
-							@endif
+						@endif
 						</div>
 						<div class="similar-home">
 							<h2>similar homes :</h2>
@@ -183,6 +183,112 @@
 				</div>
 			</div>
 		</div>
+		<!-- Comment sec strat -->
+		<div class="comment-area">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1"><i class="fa fa-comment" aria-hidden="true"></i>3 Coments<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						  </h4>
+						</div>
+						<!-- comment reply -->
+						<div id="collapse1" class="">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<div class="single-comment">
+										<div class="row">
+											<div class="col-md-1 col-sm-2">
+												<img src="{{ asset('assets/img/upload/profile/default.jpg') }}" alt="" />
+											</div>
+											<div class="col-md-11 col-sm-10">
+												<h2>user name</h2>
+												<p>good home</p>
+												<a data-toggle="collapse" class="show-reply" href="#collapse2">reply<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+												<a style="display:none;" class="hide-reply" data-toggle="collapse" href="#collapse2">hide replies<i class="fa fa-caret-up" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</li>
+									<div id="collapse2" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="comment-reply">
+													<div class="single-comment">
+														<div class="row">
+															<div class="col-md-1 col-sm-2">
+																<img src="{{ asset('assets/img/upload/profile/default.jpg') }}" alt="" />
+															</div>
+															<div class="col-md-11 col-sm-10">
+																<h2>user name</h2>
+																<p>good home</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item">Two</li>
+											<li class="list-group-item">Three</li>
+								
+										</ul>
+										<div class="panel-footer">
+											<form>
+												<div class="row">
+													<div class="col-md-11 col-sm-11">
+														<div class="form-group-sm">
+														<input type="text" class="form-control" id="reply" aria-describedby="" placeholder="add your reply...">
+														</div>
+													</div>
+													<div class="col-md-1 col-sm-1">
+														<button type="submit" class="btn btn-reply btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								<li class="list-group-item">
+									<div class="single-comment">
+										<div class="row">
+											<div class="col-md-1 col-sm-2">
+												<img src="{{ asset('assets/img/upload/profile/default.jpg') }}" alt="" />
+											</div>
+											<div class="col-md-11 col-sm-10">
+												<h2>user name</h2>
+												<p>good home</p>
+												<a data-toggle="collapse" class="show-reply" href="#collapse2">reply<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+												<a style="display:none;" class="hide-reply" data-toggle="collapse" href="#collapse2">hide replies<i class="fa fa-caret-up" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						<div class="panel-footer">
+							<form>
+								<div class="row">
+									<form action="/comment" method="post" enctype="multipart/form-data">
+									{{csrf_field()}}
+										<div class="col-md-11 col-sm-11">
+											<div class="form-group">
+											<input type="text" class="form-control" id="reply" name="comment" aria-describedby="" placeholder="add your comment...">
+											<input type="text" class="form-control" id="post_id" name="post_id" value="{{$row->id}}" aria-describedby>
+											</div>
+										</div>
+										<div class="col-md-1 col-sm-1">
+											<button type="submit" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+										</div>
+									</form>
+								</div>
+							</form>
+						</div>
+						</div>
+						<!-- comment reply end -->
+					  </div>
+					</div>
+
+			</div>
+		</div>
+		<!-- comment sec end -->
 	@endforeach
 @endsection
 

@@ -44,6 +44,8 @@ Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 
 Route::get('/', 'FrontViewController@all_post')->name('home');
 Route::get('/view_post/{id}', 'FrontViewController@view_post');
+//Comment Sec
+Route::POST('/comment','UsersActionController@comment');
 
 //admin_sec
 

@@ -744,9 +744,6 @@ span {
 	float: right;
 	font-size: 14px;
 }
-#remove_bookmark{
-	display: none;
-}
 .home-view-banner-area{}
 .number-plate {
 	
@@ -914,9 +911,11 @@ span {
 }
 .panel-title a {
 	margin: 0 10px;
+	text-decoration: none;
 }
 .panel-title a:hover {
 	text-decoration: none;
+	color: black;
 }
 .panel-title a i {
 	margin-right: 5px;
@@ -979,6 +978,9 @@ span {
 	border-bottom: 1px solid #b6b7b9;
 }
 .admin-pannel-left ul li:hover {
+	background-color: #dedee3;
+}
+.hover_active {
 	background-color: #dedee3;
 }
 .admin-pannel-left ul li a {

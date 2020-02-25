@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
+@section('link_reg_log')
+							<div class="submit">
+								<a class="box-btn" href="{{ route('login') }}" style="float:right;">log in<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+							</div>
+@endsection
+
 @section('content')
-		<header class="header-area">
+		<!--<header class="header-area">
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
@@ -21,18 +27,18 @@
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="logo">
 								<!--<a href="#home"><span>land</span>load</a>-->
-								<img src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(7).png')}}" alt="" />
+								<!--<img src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(7).png')}}" alt="" />
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="submit">
+						<div class="col-lg-6 col-md-6 col-sm-12">-->
+							<!--<div class="submit">
 								<a class="box-btn" href="{{ route('login') }}" style="float:right;">log in<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</header>
+		</header>-->
 <!--REGISTER SECTION START-->
 		<div class="reg-area">
 			<div class="container">
