@@ -58,7 +58,8 @@
 								</div>
 							</div>
 							<div class="col-md-2 col-sm-12">
-							@if($book==0)
+							@if($book==False)
+							@elseif($book==0)
 								<div id="bookmark" class="add-cart">
 									<a id="bookmark_link" href="{{url('/user_bookmark_post',$row->id) }}">bookmark</a>
 								</div>
@@ -121,11 +122,13 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="owner-info">
+							@if($user_id != 0)
 							@foreach($user_id as $user_info)
 							<img src="{{ asset('assets/img/upload/profile/'.$user_info->avatar)}}" alt="" />
 							<h3>{{$user_info->name}}</h3>
 							<a href="#"><i></i>{{$user_info->email}}</a>
 							@endforeach
+							@endif
 						</div>
 						<div class="similar-home">
 							<h2>similar homes :</h2>

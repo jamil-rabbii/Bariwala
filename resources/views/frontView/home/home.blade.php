@@ -111,6 +111,9 @@
 						<div class="single-result">
 							<div class="single-result-img">
 								<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
+								<div class="view-count">
+									<p>{{$row->view_count}}<i class="fas fa-eye"></i></p>
+								</div>
 							</div>
 							<div class="house-info">
 								<div class="row">

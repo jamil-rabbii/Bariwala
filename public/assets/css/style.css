@@ -248,10 +248,34 @@ span {
 .single-result-img {
 	overflow: hidden;
 	transition: 0.5s;
+	position: relative;
 }
 .single-result-img img:hover {
 	transform: scale(1.25);
 	overflow: ;
+}
+.view-count {
+	position: absolute;
+	content: "";
+	background-color: #FF9D00;
+	top: 0;
+	right: 0;
+	color: white;
+	border-radius: 76%;
+	width: 16%;
+	height: 21%;
+	text-align: center;
+	margin-right: 20px;
+	margin-top: 20px;
+	line-height: 54px;
+}
+.view-count p {
+	font-weight: bold;
+	font-size: 14px;
+}
+.view-count i {
+	margin-left: 5px;
+	font-size: 16px;
 }
 .house-info {
 	padding: 20px;
@@ -407,6 +431,21 @@ span {
 
 
 /*========================================USER PANNEL PAGE==========================================*/
+
+
+/*nav img*/
+.nav-img {
+	float: right;
+}
+.nav-img img {
+	width: 54px;
+	height: 54px;
+	border-radius: 50px;
+}
+
+/*end nav img*/
+
+
 
 .user-pannel-area{}
 .usser-pannel{}

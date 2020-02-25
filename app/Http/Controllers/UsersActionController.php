@@ -69,7 +69,9 @@ class UsersActionController extends Controller
         $table->bedroom = $request->bedrooms;
         $table->bathroom = $request->bathrooms;
         $table->parking = $request->parking;
-        $table->otherfeatures = implode(", ",$request->extra_facilities);
+		if($request->extra_facilities != NULL){
+		$table->otherfeatures = implode(", ",$request->extra_facilities);
+		}
         $table->addid = $request->add_id;
 		$table->save();
         return Redirect()->back()->with('insertsuccess',' your request for advertise your house needs admin confirmaion in order to be publish.');
