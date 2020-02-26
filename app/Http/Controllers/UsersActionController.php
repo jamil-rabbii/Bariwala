@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Advertisementproparty;
+use App\Userbookmark;
+use App\Post_Comment;
 use Auth;
 
 use Illuminate\Http\Request;
@@ -149,5 +151,33 @@ class UsersActionController extends Controller
         return redirect()->back();
 
     }
+	
+	public function user_bookmark_post($id){
+		$data = Advertisementproparty::find($id);
+		$table = new Userbookmark();
+		$table->user_id =  Auth::user()->id;
+		$table->ad_post_id = $id;
+		$table->title = $data->title;
+		$table->location = $data->location;
+		$table->price = $data->price;
+		$table->featureimg = $data->featureimg;
+		$table->save();
+		//echo $table;
+		return redirect()->back();
+	}
+	
+	public function user_remove_bookmark($id){
+		$data = Userbookmark::find($id);
+        $data->delete();
+
+        return redirect()->back();
+	}
+	
+	public function comment(Request $request){
+		$table = new Post_Comment();
+		$table->comment = $request->comment;
+		$table->post_id = $request->post_id;
+		$table->save();
+	}
 }
 

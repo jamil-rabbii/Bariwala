@@ -11,7 +11,17 @@
 			<div class="container-fluid">
 				<div class="usser-pannel">
 					<div class="row">
-						@include('frontView.inc.admin_view_left')
+						<div class="col-lg-2">
+							<div class="admin-pannel-left">
+								<ul>
+									<li><a href="/Admin/pending_post">Pending Post</a></li>
+									<li><a href="/Admin/allpost">All Post</a></li>
+									<li><a href="/Admin/alluser">Users</a></li>
+									<li class="hover_active"><a href="/admin/see_alladmin/">Admins</a></li>
+									<li><a href="/home">User Mode</a></li>
+								</ul>
+							</div>
+						</div>
 						<div class="col-lg-10">
 							<!-- All Adimn -->
 							<div class="see-all-users-area">

@@ -19,7 +19,17 @@
 			<div class="container-fluid">
 				<div class="usser-pannel">
 					<div class="row">
-						@include('frontView.inc.admin_view_left')
+						<div class="col-lg-2">
+							<div class="admin-pannel-left">
+								<ul>
+									<li class="hover_active"><a href="/Admin/pending_post">Pending Post</a></li>
+									<li><a href="/Admin/allpost">All Post</a></li>
+									<li><a href="/Admin/alluser">Users</a></li>
+									<li><a href="/admin/see_alladmin/">Admins</a></li>
+									<li><a href="/home">User Mode</a></li>
+								</ul>
+							</div>
+						</div>
 						<div class="col-lg-10">
 							<!-- PENDING POST -->
 							<div class="users-own-post-table">

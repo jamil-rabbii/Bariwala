@@ -50,8 +50,7 @@ class FrontViewController extends Controller
         return view('frontView.home.home')->with(['data'=>$data]);
        // echo $data;
     }
-    public function view_post($id)
-    {
+    public function view_post($id){
 		$data = Advertisementproparty::where('id', $id )->get();
 		$view = Advertisementproparty::where('id', $id )->first();
 		$viewcount = 'view_'.$view->id;
@@ -60,29 +59,33 @@ class FrontViewController extends Controller
 			Session::put($viewcount,1);
 		}
 		if (Auth::user() != Null){
-		$bookmark_data = Userbookmark::where([['user_id', '=', Auth::user()->id],['ad_post_id', '=', $id],])->get();
-		if($bookmark_data=='[]'){
-			$book = 0;
-		}
-		else{
-			foreach($bookmark_data as $row){
-				$book = $row->id;
+			$bookmark_data = Userbookmark::where([['user_id', '=', Auth::user()->id],['ad_post_id', '=', $id],])->get();
+			if($bookmark_data=='[]'){
+				$book = 0;
+			}
+			else{
+				foreach($bookmark_data as $row){
+					$book = $row->id;
+				}
 			}
 		}
-		$user_id = Auth::user()::where('id', $postman)->get();
-		}
 		else{
-			$user_id=0;
-			$book=False;
+			$book = -1;
 		}
+		
 		foreach ($data as $passid)
 			$postman = $passid->addid;
 			$room_no = $passid->room;
 			$rentfor = $passid->rentfor;
 			$city = $passid->city;
 		$similar_home = Advertisementproparty::where([['city', '=', $city],['room', '>=', $room_no],['rentfor', '=', $rentfor],])->limit(3)->get();
-		
-			//echo $similar_home;
+		if (Auth::user() != Null){
+		$user_id = Auth::user()::where('id', $postman)->get();
+		}
+		else{
+			$user_id=NULL;
+		}
+		//echo $book;
         return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home,'book'=>$book]);
     }
 
