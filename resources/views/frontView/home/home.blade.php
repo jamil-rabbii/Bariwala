@@ -44,41 +44,49 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 clo-md-12 col-sm-12">
-						<form action="#">
-							<div class="row">
-								<div class="col-lg-10 clo-md-10 col-sm-12">
+						<div class="row">
+							<div class="col-lg-12 clo-md-12 col-sm-12">
+								<form action="/usersr_search_result" method="post" enctype="multipart/form-data">
+									@csrf
 									<div class="row">
-										<div class="col-lg-3 clo-md-3 col-sm-12">
-											<div class="form-group">
-												<label for="city">SELECT YOUR CITY</label>
-												<input type="text" class="form-control" id="">
+										<div class="col-lg-10 clo-md-10 col-sm-12">
+											<div class="row">
+												<div class="col-lg-3 clo-md-3 col-sm-12">
+													<div class="form-group">
+														<label for="city">SELECT YOUR CITY</label>
+														<input type="text" class="form-control" id="city" name="city">
+													</div>
+												</div>
+												<div class="col-lg-3 clo-md-3 col-sm-12">
+													<div class="form-group">
+														<label for="max_price">MAX PRICE</label>
+														<input type="int" class="form-control" id="max_price" name="max_price">
+													</div>
+												</div>
+												<div class="col-lg-3 clo-md-3 col-sm-12">
+													<div class="form-group">
+														<label for="bedrooms">ROOMS</label>
+														<input type="int" class="form-control" id="bedrooms" name="bedrooms">
+													</div>
+												</div>
+												<div class="col-lg-3 clo-md-3 col-sm-12">
+													<div class="form-group">
+														<label for="">SEARCHING FOR * </label>
+														<select id="searching_for" class="form-control" name="searching_for">
+															<option value="family" selected>Family</option>
+															<option value="bachelor">Bachelor</option>
+														</select>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="col-lg-3 clo-md-3 col-sm-12">
-											<div class="form-group">
-												<label for="max_price">MAX PRICE</label>
-												<input type="int" class="form-control" id="">
+										<div class="col-lg-2 clo-md-2 col-sm-12">
+											<button type="submit" class="btn btn-default box-btn search-home">search</button>
 											</div>
-										</div>
-										<div class="col-lg-3 clo-md-3 col-sm-12">
-											<div class="form-group">
-												<label for="bedrooms">BEDROOMS</label>
-												<input type="int" class="form-control" id="">
-											</div>
-										</div>
-										<div class="col-lg-3 clo-md-3 col-sm-12">
-											<div class="form-group">
-												<label for="bathrooms">BATHROOMS</label>
-												<input type="int" class="form-control" id="">
-											</div>
-										</div>
 									</div>
-								</div>
-								<div class="col-lg-2 clo-md-2 col-sm-12">
-									<button type="submit" class="btn btn-default box-btn search-home">search</button>
-								</div>
+								</form>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -111,16 +119,16 @@
 						<div class="single-result">
 							<div class="single-result-img">
 								<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
-								<div class="view-count">
+								<!--<div class="view-count">
 									<p>{{$row->view_count}}<i class="fas fa-eye"></i></p>
-								</div>
+								</div>-->
 							</div>
 							<div class="house-info">
 								<div class="row">
 									<div class="col-lg-8 col-sm-6">
 										<div class="house-info-left">
 											<h3>{{$row->title}}</h3>
-											<p><i></i> {{$row->location}}</p>
+											<p><i>{{$row->location}}</i>, {{$row->city}}</p>
 										</div>
 									</div>
 									<div class="col-lg-4 col-sm-6">
@@ -130,7 +138,7 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-9">
 										<div class="info-btm">
 											<h1>{{$row->bedroom}}</h1>
 											<p>beds</p>
@@ -139,8 +147,12 @@
 											<h1>{{$row->bathroom}}</h1>
 											<p>baths</p>
 										</div>
+										<div class="info-btm">
+											<h1>{{$row->view_count}}</h1>
+											<p><i class="fas fa-eye"></i></p>
+										</div>
 									</div>
-									<div class="col-lg-6">
+									<div class="col-lg-3">
 										<div class="info-btm-right">
 											<a class="border-btn" href="{{url('/view_post',$row->id) }}">details</a>
 										</div>

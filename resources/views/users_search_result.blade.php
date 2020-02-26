@@ -48,7 +48,7 @@
 									<div class="col-lg-8 col-sm-6">
 										<div class="house-info-left">
 											<h3>{{$row->title}}</h3>
-											<p><i></i> {{$row->location}}</p>
+											<p><i>{{$row->location}}</i>, {{$row->city}}</p>
 										</div>
 									</div>
 									<div class="col-lg-4 col-sm-6">
@@ -66,6 +66,10 @@
 										<div class="info-btm">
 											<h1>{{$row->bathroom}}</h1>
 											<p>baths</p>
+										</div>
+										<div class="info-btm">
+											<h1>{{$row->view_count}}</h1>
+											<p><i class="fas fa-eye"></i></p>
 										</div>
 									</div>
 									<div class="col-lg-6">

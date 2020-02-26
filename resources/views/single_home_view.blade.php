@@ -32,6 +32,7 @@
 								<div class="intro-title">
 									<h1>{{$row->title}}</h1>
 									<p><i class="fa fa-location-arrow" aria-hidden="true"></i>{{$row->location}}</p>
+									<p><i class="fas fa-city"></i>{{$row->city}}</p>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
