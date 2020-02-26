@@ -38,15 +38,11 @@
 							<div class="col-md-3 col-sm-6">
 								<div class="rooms-info">
 									<div class="row">
-										<div class="col-4">
+										<div class="col-6">
 											<h2>{{$row->bedroom}}</h2>
 											<p>beds</p>
 										</div>
-										<div class="col-4">
-											<h2>{{$row->view_count}}</h2>
-											<p><i class="fas fa-eye"></i></p>
-										</div>
-										<div class="col-4">
+										<div class="col-6">
 											<h2>{{$row->bathroom}}</h2>
 											<p>baths</p>
 										</div>
@@ -185,17 +181,17 @@
 			</div>
 		</div>
 		<!-- Comment sec strat -->
-		<!-- <div class="comment-area">
+<!--		<div class="comment-area">
 			<div class="container">
 				<div class="panel-group">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 						  <h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse1"><i class="fa fa-comment" aria-hidden="true"></i>3 Coments<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+							<a data-toggle="collapse" href="#collapse1"><i class="fa fa-comment" aria-hidden="true"></i>{{ COUNT($comment)}} Coments<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 						  </h4>
 						</div>
 						<!-- comment reply -->
-<!--						<div id="collapse1" class="">
+	<!--					<div id="collapse1" class="panel-collapse collapse">
 							<ul class="list-group">
 							@foreach($comment as $comments)
 							@if($comments->ref_id == NULL)
@@ -209,14 +205,23 @@
 												<h2>{{ $comments->name }}</h2>
 												<p>{{ $comments->comment }}</p>
 												<a data-toggle="collapse" class="show-reply" href="#{{ $comments->id }}">reply<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+											@guest
+												@if (Route::has('register'))
+													
+												@endif
+												@else
+												@if(Auth::user()->id == $comments->user_id || Auth::user()->id == $row->addid || Auth::user()->admin_ship == 1)
 												@if(Auth::user()->id == $comments->user_id)
-												<a class="show-reply ml-3" href="#" data-toggle="modal" data-target="#exampleModalCenter">edit</a>
+												<a class="show-reply ml-3" href="#" data-toggle="modal" data-target="#{{ 'id'.$comments->id }}">edit</a>
+												@endif
 												<a class="show-reply ml-3" href="{{url('/del_comment',$comments->id) }}">delete</a>
 												@endif
+											@endguest
+												<p class="float-right">{{ $comments->updated_at }}</p>
 												<a style="display:none;" class="hide-reply" data-toggle="collapse" href="#collapse2">hide replies<i class="fa fa-caret-up" aria-hidden="true"></i></a>
 												
 												<!-- Modal -->
-	<!--											<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<!--											<div class="modal fade" id="{{ 'id'.$comments->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 												  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 													<div class="modal-content">
 													  <div class="modal-header">
@@ -254,7 +259,7 @@
 												<!-- modal end -->
 												
 												
-<!--											</div>
+	<!--										</div>
 										</div>
 									</div>
 									<div id="{{ $comments->id }}" class="panel-collapse collapse">
@@ -271,12 +276,21 @@
 															<div class="col-md-11 col-sm-10">
 																<h2>{{ $replies->name }}</h2>
 																<p>{{ $cc=$replies->comment }}</p>
-																@if(Auth::user()->id == $comments->user_id)
-																<a class="show-reply ml-3" href="#" data-toggle="modal" data-target="#exampleModalCenter2">edit</a>
+															@guest
+																@if (Route::has('register'))
+																	
+																@endif
+																@else
+																@if(Auth::user()->id == $comments->user_id || Auth::user()->id == $row->addid || Auth::user()->admin_ship == 1)
+																@if(Auth::user()->id == $replies->user_id)
+																<a class="show-reply ml-3" href="#" data-toggle="modal" data-target="#{{ 'colid'.$replies->id }}">edit</a>
+																@endif
 																<a class="show-reply ml-3" href="{{url('/del_comment',$replies->id) }}">delete</a>
 																@endif
+															@endguest
+																<p class="float-right">{{ $comments->updated_at }}</p>
 															<!-- Modal -->
-	<!--															<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<!--															<div class="modal fade" id="{{ 'colid'.$replies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 																  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 																	<div class="modal-content">
 																	  <div class="modal-header">
@@ -293,7 +307,7 @@
 																							<form class="form-horizontal" action="/edit_comment" method="post" enctype="multipart/form-data">
 																								{{csrf_field()}}
 																								<input type="text" class="form-control" id="" name="comment" value="{{ $cc }}" aria-describedby="">
-																								<input type="text" class="form-control" id="" name="comment_id" value="{{ $replies->id }}" aria-describedby="">
+																								<input type="hidden" class="form-control" id="" name="comment_id" value="{{ $replies->id }}" aria-describedby="">
 																								<div class="form-group mx-auto">
 																									<div class="col-sm-offset-4 col-sm-8 mx-auto">
 																									  <button type="submit" class="btn btn-info mt-3">Update Info</button>
@@ -360,7 +374,7 @@
 						</div>
 						</div>
 						<!-- comment reply end -->
-<!--					  </div>
+	<!--				  </div>
 					</div>
 			</div>
 		</div>
