@@ -956,6 +956,9 @@ span {
 	padding: 5px 15px;
 	font-size: 14px;
 }
+.comment-area .modal-content {
+	margin-top: 80px;
+}
 
 
 

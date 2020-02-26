@@ -173,11 +173,42 @@ class UsersActionController extends Controller
         return redirect()->back();
 	}
 	
+	
 	public function comment(Request $request){
 		$table = new Post_Comment();
-		$table->comment = $request->comment;
+		$table->user_id = Auth::user()->id;
+		$table->name = Auth::user()->name;
+		$table->avatar = Auth::user()->avatar;
 		$table->post_id = $request->post_id;
+		$table->comment = $request->comment;
+		if($request->ref_id != NULL){
+		$table->ref_id = $request->ref_id;
+		}
 		$table->save();
+		return redirect()->back();
+    }
+	
+	public function del_comment($id){
+		$data = Post_Comment::find($id);
+        $data->delete();
+		
+		$reply_data = Post_Comment::where('ref_id', $id)->get();
+		foreach($reply_data as $replies){
+			$replies->delete();
+		}
+		
+        return redirect()->back();
+	}
+	
+	public function edit_comment(Request $request){
+		$data = new Post_Comment();
+		$data = Post_Comment::where('id', $request->comment_id)->get();
+		foreach($data as $data){
+			$data->comment = $request->comment;
+			echo $data;
+			$data->save();
+		}
+		return redirect()->back();
 	}
 }
 

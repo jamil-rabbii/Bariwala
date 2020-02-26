@@ -21,6 +21,8 @@ class CreatePostCommentsTable extends Migration
             $table->foreign('post_id')->references('id')->on('advertisementproparties');
             $table->longText('comment');
             $table->integer('ref_id')->nullable();
+            $table->string('name');
+            $table->string('avatar',200)->nullable();
             $table->timestamps();
         });
     }
