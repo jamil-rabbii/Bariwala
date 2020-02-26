@@ -184,7 +184,7 @@
 			</div>
 		</div>
 		<!-- Comment sec strat -->
-		<div class="comment-area">
+		<!-- <div class="comment-area">
 			<div class="container">
 				<div class="panel-group">
 					<div class="panel panel-default">
@@ -194,50 +194,140 @@
 						  </h4>
 						</div>
 						<!-- comment reply -->
-						<div id="collapse1" class="">
+<!--						<div id="collapse1" class="">
 							<ul class="list-group">
+							@foreach($comment as $comments)
+							@if($comments->ref_id == NULL)
 								<li class="list-group-item">
 									<div class="single-comment">
 										<div class="row">
 											<div class="col-md-1 col-sm-2">
-												<img src="{{ asset('assets/img/upload/profile/default.jpg') }}" alt="" />
+												<img src="{{ asset('assets/img/upload/profile/'.$comments->avatar) }}" alt="" />
 											</div>
 											<div class="col-md-11 col-sm-10">
-												<h2>user name</h2>
-												<p>good home</p>
-												<a data-toggle="collapse" class="show-reply" href="#collapse2">reply<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+												<h2>{{ $comments->name }}</h2>
+												<p>{{ $comments->comment }}</p>
+												<a data-toggle="collapse" class="show-reply" href="#{{ $comments->id }}">reply<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+												@if(Auth::user()->id == $comments->user_id)
+												<a class="show-reply ml-3" href="#" data-toggle="modal" data-target="#exampleModalCenter">edit</a>
+												<a class="show-reply ml-3" href="{{url('/del_comment',$comments->id) }}">delete</a>
+												@endif
 												<a style="display:none;" class="hide-reply" data-toggle="collapse" href="#collapse2">hide replies<i class="fa fa-caret-up" aria-hidden="true"></i></a>
-											</div>
+												
+												<!-- Modal -->
+	<!--											<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+												  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+													<div class="modal-content">
+													  <div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLongTitle">Update your comment..</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														  <span class="text-dark" aria-hidden="true">&times;</span>
+														</button>
+													  </div>
+														<div class="modal-body">
+															<div class="container">
+																<div class="row">
+																	<div class="col-12">
+																		<div class="update-form">
+																			<form class="form-horizontal" action="/edit_comment" method="post" enctype="multipart/form-data">
+																				{{csrf_field()}}
+																				<input type="text" class="form-control" id="" name="comment" value="{{ $comments->comment }}" aria-describedby="">
+																				<input type="text" class="form-control" id="" name="comment_id" value="{{ $comments->id }}" aria-describedby="">
+																				<div class="form-group mx-auto">
+																					<div class="col-sm-offset-4 col-sm-8 mx-auto">
+																					  <button type="submit" class="btn btn-info mt-3">Update Info</button>
+																					</div>
+																				</div>
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													  <div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													  </div>
+													</div>
+												  </div>
+												</div>
+												<!-- modal end -->
+												
+												
+<!--											</div>
 										</div>
 									</div>
-								</li>
-									<div id="collapse2" class="panel-collapse collapse">
+									<div id="{{ $comments->id }}" class="panel-collapse collapse">
 										<ul class="list-group">
+										@foreach($comment as $replies)
+											@if($replies->ref_id == $comments->id)
 											<li class="list-group-item">
 												<div class="comment-reply">
 													<div class="single-comment">
 														<div class="row">
 															<div class="col-md-1 col-sm-2">
-																<img src="{{ asset('assets/img/upload/profile/default.jpg') }}" alt="" />
+																<img src="{{ asset('assets/img/upload/profile/'.$replies->avatar) }}" alt="" />
 															</div>
 															<div class="col-md-11 col-sm-10">
-																<h2>user name</h2>
-																<p>good home</p>
-															</div>
+																<h2>{{ $replies->name }}</h2>
+																<p>{{ $cc=$replies->comment }}</p>
+																@if(Auth::user()->id == $comments->user_id)
+																<a class="show-reply ml-3" href="#" data-toggle="modal" data-target="#exampleModalCenter2">edit</a>
+																<a class="show-reply ml-3" href="{{url('/del_comment',$replies->id) }}">delete</a>
+																@endif
+															<!-- Modal -->
+	<!--															<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+																  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+																	<div class="modal-content">
+																	  <div class="modal-header">
+																		<h5 class="modal-title" id="exampleModalLongTitle">Update your comment..</h5>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		  <span class="text-dark" aria-hidden="true">&times;</span>
+																		</button>
+																	  </div>
+																		<div class="modal-body">
+																			<div class="container">
+																				<div class="row">
+																					<div class="col-12">
+																						<div class="update-form">
+																							<form class="form-horizontal" action="/edit_comment" method="post" enctype="multipart/form-data">
+																								{{csrf_field()}}
+																								<input type="text" class="form-control" id="" name="comment" value="{{ $cc }}" aria-describedby="">
+																								<input type="text" class="form-control" id="" name="comment_id" value="{{ $replies->id }}" aria-describedby="">
+																								<div class="form-group mx-auto">
+																									<div class="col-sm-offset-4 col-sm-8 mx-auto">
+																									  <button type="submit" class="btn btn-info mt-3">Update Info</button>
+																									</div>
+																								</div>
+																							</form>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	  <div class="modal-footer">
+																		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+																	  </div>
+																	</div>
+																  </div>
+																</div>
+																<!-- modal end -->
+	<!--														</div>
 														</div>
 													</div>
 												</div>
 											</li>
-											<li class="list-group-item">Two</li>
-											<li class="list-group-item">Three</li>
-								
+											@endif
+										@endforeach
 										</ul>
 										<div class="panel-footer">
-											<form>
+											<form action="/comment" method="post" enctype="multipart/form-data">
+											{{csrf_field()}}
 												<div class="row">
 													<div class="col-md-11 col-sm-11">
 														<div class="form-group-sm">
-														<input type="text" class="form-control" id="reply" aria-describedby="" placeholder="add your reply...">
+														<input type="text" class="form-control" id="reply" name="comment" aria-describedby="" placeholder="add your reply...">
+														<input type="hidden" class="form-control" id="post_id" name="post_id" value="{{$row->id}}" aria-describedby>
+														<input type="hidden" class="form-control" id="ref_id" name="ref_id" value="{{$comments->id}}" aria-describedby>
 														</div>
 													</div>
 													<div class="col-md-1 col-sm-1">
@@ -247,45 +337,30 @@
 											</form>
 										</div>
 									</div>
-								<li class="list-group-item">
-									<div class="single-comment">
-										<div class="row">
-											<div class="col-md-1 col-sm-2">
-												<img src="{{ asset('assets/img/upload/profile/default.jpg') }}" alt="" />
-											</div>
-											<div class="col-md-11 col-sm-10">
-												<h2>user name</h2>
-												<p>good home</p>
-												<a data-toggle="collapse" class="show-reply" href="#collapse2">reply<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-												<a style="display:none;" class="hide-reply" data-toggle="collapse" href="#collapse2">hide replies<i class="fa fa-caret-up" aria-hidden="true"></i></a>
-											</div>
-										</div>
-									</div>
 								</li>
+							@endif
+							@endforeach
 							</ul>
 						<div class="panel-footer">
-							<form>
+							<form action="/comment" method="post" enctype="multipart/form-data">
+							{{csrf_field()}}
 								<div class="row">
-									<form action="/comment" method="post" enctype="multipart/form-data">
-									{{csrf_field()}}
-										<div class="col-md-11 col-sm-11">
-											<div class="form-group">
+									<div class="col-md-11 col-sm-11">
+										<div class="form-group">
 											<input type="text" class="form-control" id="reply" name="comment" aria-describedby="" placeholder="add your comment...">
-											<input type="text" class="form-control" id="post_id" name="post_id" value="{{$row->id}}" aria-describedby>
-											</div>
+											<input type="hidden" class="form-control" id="post_id" name="post_id" value="{{$row->id}}" aria-describedby>
 										</div>
-										<div class="col-md-1 col-sm-1">
-											<button type="submit" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-										</div>
-									</form>
+									</div>
+									<div class="col-md-1 col-sm-1">
+										<button type="submit" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+									</div>
 								</div>
 							</form>
 						</div>
 						</div>
 						<!-- comment reply end -->
-					  </div>
+<!--					  </div>
 					</div>
-
 			</div>
 		</div>
 		<!-- comment sec end -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Advertisementproparty;
 use App\Userbookmark;
+use App\Post_Comment;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -85,8 +86,8 @@ class FrontViewController extends Controller
 		else{
 			$user_id=NULL;
 		}
-		//echo $book;
-        return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home,'book'=>$book]);
+		$comment = Post_Comment::all();
+        return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home,'book'=>$book,'comment'=>$comment]);
     }
 
 }
