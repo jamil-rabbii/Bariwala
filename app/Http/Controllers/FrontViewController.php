@@ -87,6 +87,7 @@ class FrontViewController extends Controller
 			$user_id=NULL;
 		}
 		$comment = Post_Comment::all();
+		//echo $comment;
         return view('single_home_view')->with(['data'=>$data,'user_id'=>$user_id,'similar_home'=>$similar_home,'book'=>$book,'comment'=>$comment]);
     }
 
