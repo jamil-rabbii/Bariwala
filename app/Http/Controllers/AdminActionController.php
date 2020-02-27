@@ -92,10 +92,11 @@ class AdminActionController extends Controller
         
         return view('admin_layouts.admin_see_admin')->with(['admins'=>$admins]);
     }
-    /*
+ /*
     public function countss(){
     	$data = Advertisementproparty::all();
     	$pending = Advertisementproparty::where([['aprove', '=', NULL],])->get();
-        return view('frontView.inc.admin_view_left')->with(['data'=>$data,'pending'=>$pending]);
+       // return view('frontView.inc.admin_view_left')->with(['data'=>$data,'pending'=>$pending]);
+    	//echo count($data;
     }*/
 }
