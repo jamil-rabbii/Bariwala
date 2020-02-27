@@ -8,7 +8,7 @@
 	
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="submit">
-								<a class="box-btn" href="/login"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;margin-left:0px;"></i>advertise home</a>
+								<a class="box-btn" href="/user/add_property"><i class="fa fa-plus" aria-hidden="true" style="margin-right:5px;margin-left:0px;"></i>advertise home</a>
 							</div>
 						</div>
 					</div>
@@ -155,6 +155,11 @@
 									<div class="col-lg-3">
 										<div class="info-btm-right">
 											<a class="border-btn" href="{{url('/view_post',$row->id) }}">details</a>
+										</div>
+									</div>
+									<div class="col-lg-12 col-sm-6">
+										<div class="create_at">
+											<p>Post created at : {{date('F d, Y',strtotime($row->created_at))}} at {{date('g:ia ',strtotime($row->created_at))}}</p>
 										</div>
 									</div>
 								</div>

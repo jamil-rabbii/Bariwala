@@ -38,13 +38,17 @@
 							<div class="col-md-3 col-sm-6">
 								<div class="rooms-info">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-4">
 											<h2>{{$row->bedroom}}</h2>
 											<p>beds</p>
 										</div>
-										<div class="col-6">
+										<div class="col-4">
 											<h2>{{$row->bathroom}}</h2>
 											<p>baths</p>
+										</div>
+										<div class="col-4">
+											<h2>{{$row->view_count}}</h2>
+											<p><i class="fas fa-eye"></i></p>
 										</div>
 									</div>
 								</div>

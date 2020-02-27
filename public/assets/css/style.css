@@ -315,8 +315,11 @@ span {
 	float: right;
 }
 .info-btm-right a {}
-
-
+.create_at{}
+.create_at p{
+	color: gray;
+	font-size: 14px;
+}
 /*OUR INFO SECTION START*/
 
 .our-info {
