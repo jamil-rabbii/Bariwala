@@ -99,11 +99,33 @@
 								<p>sorted by :</p>
 							</div>
 							<div class="col-lg-2">
-								<select class="form-control" id="">
-									<option>default</option>
-									<option><a href="/login">Price (Low to High)</a></option>
-									<option>Price (High to Low)</option>
-								</select>
+								<div class="sorted-nav">
+									@if($by??'' == 'ltoh')
+									<ul>
+										<li id="sorted-nav-up"><a href="{{url('/sorted','ltoh') }}">Price (Low to High)</a><i class="float-right pt-1 fa fa-caret-down" aria-hidden="true"></i></li>
+										<div id="sorted-nav-collaps">
+											<li><a href="{{url('/sorted','d') }}">Default</a></li>
+											<li><a href="{{url('/sorted','htol') }}">Price (High to Low)</a></li>
+										</div>
+									</ul>
+									@elseif($by??'' == 'htol')
+									<ul>
+										<li id="sorted-nav-up"><a href="{{url('/sorted','htol') }}">Price (High to Low)</a><i class="float-right pt-1 fa fa-caret-down" aria-hidden="true"></i></li>
+										<div id="sorted-nav-collaps">
+											<li><a href="{{url('/sorted','d') }}">Default</a></li>
+											<li><a href="{{url('/sorted','ltoh') }}">Price (Low to High)</a></li>
+										</div>
+									</ul>
+									@else
+									<ul>
+										<li id="sorted-nav-up"><a href="{{url('/sorted','d') }}">Default</a><i class="float-right pt-1 fa fa-caret-down" aria-hidden="true"></i></li>
+										<div id="sorted-nav-collaps">
+											<li><a href="{{url('/sorted','ltoh') }}">Price (Low to High)</a></li>
+											<li><a href="{{url('/sorted','htol') }}">Price (High to Low)</a></li>
+										</div>
+									</ul>
+									@endif
+								</div>
 							</div>
 						</div>
 					</div>
@@ -168,6 +190,7 @@
 					</div>
 					@endforeach
 				</div>
+				<!-- Pagination link is there-->
 				<div class="pagination d-flex justify-content-center">
 					<div class="row">
 						<div class="col-6">
@@ -255,9 +278,15 @@
 					"the best deal",
 					"for you..."
 					],
-			typeSpeed:50,
-			backSpeed:50,
-			loop:true
-		});
+				typeSpeed:50,
+				backSpeed:50,
+				loop:true
+			});
+			//nav
+			$(document).ready(function(){
+			  $("#sorted-nav-up").click(function(){
+				$("#sorted-nav-collaps").slideToggle("slow");
+			  });
+			});
 		</script>
 @endsection
