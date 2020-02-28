@@ -101,7 +101,7 @@
 							<div class="col-lg-2">
 								<select class="form-control" id="">
 									<option>default</option>
-									<option>Price (Low to High)</option>
+									<option><a href="/login">Price (Low to High)</a></option>
 									<option>Price (High to Low)</option>
 								</select>
 							</div>

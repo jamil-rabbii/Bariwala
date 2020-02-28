@@ -14,14 +14,15 @@
 						<div class="col-lg-2">
 							<div class="admin-pannel-left">
 								<ul>
-									<li><a href="/Admin/pending_post">Pending Post</a></li>
-									<li class="hover_active"><a href="/Admin/allpost">All Post</a></li>
-									<li><a href="/Admin/alluser">Users</a></li>
-									<li><a href="/admin/see_alladmin/">Admins</a></li>
+									<li><a href="/Admin/pending_post">Pending Post <sup class="text-danger font-weight-bold">({{ $pending_count }})</sup></a></li>
+									<li class="hover_active"><a href="/Admin/allpost">All Post <sup class="text-danger font-weight-bold"> ({{ $all_post_count }})</sup></a></li>
+									<li><a href="/Admin/alluser">Users <sup class="text-danger font-weight-bold">({{ $user_count }})</sup></a></li>
+									<li><a href="/admin/see_alladmin/">Admins <sup class="text-danger font-weight-bold">({{ $admin_count }})</sup></a></li>
 									<li><a href="/home">User Mode</a></li>
 								</ul>
 							</div>
 						</div>
+						<!--@include('frontView.inc.admin_view_left')-->
 						<div class="col-lg-10">
 							<!-- ALL POST -->
 							<div class="users-own-post-table">

@@ -184,7 +184,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Comment sec strat -->
+		<!-- Comment sec start -->
 <!--		<div class="comment-area">
 			<div class="container">
 				<div class="panel-group">

@@ -15,8 +15,13 @@ class AdminActionController extends Controller
     {
 		$pending = Advertisementproparty::where([['aprove', '=', NULL],])->get();
         //$data = Advertisementproparty::paginate(6);
+		
+		$pending_count = COUNT($pending);
+		$all_post_count = $this->all_admin_data('all_post');
+		$user_count = $this->all_admin_data('user');
+		$admin_count = $this->all_admin_data('admin');
 		if(Auth::user()->admin_ship==1){
-			return view('admin_layouts.pending_post')->with(['pending'=>$pending]);
+			return view('admin_layouts.pending_post')->with(['pending'=>$pending,'pending_count'=>$pending_count,'all_post_count'=>$all_post_count,'user_count'=>$user_count,'admin_count'=>$admin_count]);
 		}
 		else{
 			return view('home');
@@ -38,16 +43,25 @@ class AdminActionController extends Controller
     {
 		$data = Advertisementproparty::where([['aprove', '=', '1'],])->get();
         //$data = Advertisementproparty::paginate(6);
-        return view('admin_layouts.admin-see-all-post')->with(['data'=>$data]);
+		
+		$pending_count = $this->all_admin_data('pending');
+		$all_post_count = COUNT($data);
+		$user_count = $this->all_admin_data('user');
+		$admin_count = $this->all_admin_data('admin');
+        return view('admin_layouts.admin-see-all-post')->with(['data'=>$data,'pending_count'=>$pending_count,'all_post_count'=>$all_post_count,'user_count'=>$user_count,'admin_count'=>$admin_count]);
     }
 	
 	//See All Users
     public function admin_see_allusers()
     {
 		$users = Auth::user()::all();
-		//echo $users;
         //$data = Advertisementproparty::paginate(6);
-        return view('admin_layouts.admin-all-users')->with(['users'=>$users]);
+		
+		$pending_count = $this->all_admin_data('pending');
+		$all_post_count = $this->all_admin_data('all_post');
+		$user_count = COUNT($users);
+		$admin_count = $this->all_admin_data('admin');
+        return view('admin_layouts.admin-all-users')->with(['users'=>$users,'pending_count'=>$pending_count,'all_post_count'=>$all_post_count,'user_count'=>$user_count,'admin_count'=>$admin_count]);
     }
    
 	//Delete User
@@ -90,13 +104,39 @@ class AdminActionController extends Controller
     {
 		$admins = Auth::user()::where('admin_ship', '1' )->get();
         
-        return view('admin_layouts.admin_see_admin')->with(['admins'=>$admins]);
+		$pending_count = $this->all_admin_data('pending');
+		$all_post_count = $this->all_admin_data('all_post');
+		$user_count = $this->all_admin_data('user');
+		$admin_count = COUNT($admins);
+        return view('admin_layouts.admin_see_admin')->with(['admins'=>$admins,'pending_count'=>$pending_count,'all_post_count'=>$all_post_count,'user_count'=>$user_count,'admin_count'=>$admin_count]);
     }
- /*
+	
+	/*
     public function countss(){
     	$data = Advertisementproparty::all();
     	$pending = Advertisementproparty::where([['aprove', '=', NULL],])->get();
        // return view('frontView.inc.admin_view_left')->with(['data'=>$data,'pending'=>$pending]);
     	//echo count($data;
     }*/
+	
+	public function all_admin_data($a)
+    {
+		$pending = COUNT(Advertisementproparty::where([['aprove', '=', NULL],])->get());
+		$all_post = COUNT(Advertisementproparty::where([['aprove', '=', '1'],])->get());
+		$users = COUNT(Auth::user()::all());
+		$admins = COUNT(Auth::user()::where('admin_ship', '1' )->get());
+		
+		if($a == 'pending'){
+			return $pending;
+		}
+		elseif($a == 'admin'){
+			return $admins;
+		}
+		elseif($a == 'user'){
+			return $users;
+		}
+		elseif($a == 'all_post'){
+			return $all_post;
+		}
+    }
 }
