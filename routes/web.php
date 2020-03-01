@@ -19,6 +19,7 @@
 
 
 Route::get('/','FrontViewController@index');
+Route::get('/sorted/{by}','FrontViewController@sorted_by');
 
 Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 	Route::get('/user/info', 'FrontViewController@users_info');
@@ -45,7 +46,7 @@ Route::group(['middleware'=>'AuthenticateMiddleware'],function(){
 	//Route::get('/all_admin_data', 'AdminActionController@all_admin_data');
 });
 
-Route::get('/', 'FrontViewController@all_post')->name('home');
+//Route::get('/', 'FrontViewController@all_post')->name('home');
 Route::get('/view_post/{id}', 'FrontViewController@view_post');
 //Comment Sec
 Route::POST('/comment','UsersActionController@comment');

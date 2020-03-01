@@ -14,7 +14,26 @@ use Illuminate\Database\Schema\Blueprint;
 class FrontViewController extends Controller
 {
     public function index(){
+		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'desc')->paginate(1);
+		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(1)->sortByDesc('price');
+    	$data = Advertisementproparty::where([['aprove', '=', '1'],])->latest()->paginate(6);
+		//echo $data;
 		return view('frontView.home.home')->with(['data'=>$data]);
+	}
+	
+	//sort
+	public function sorted_by($by){
+		if($by == 'ltoh'){
+			$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'asc')->paginate(6);
+		}
+		elseif($by == 'htol'){
+			$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'desc')->paginate(6);
+		}
+		else{
+			$data = Advertisementproparty::where([['aprove', '=', '1'],])->latest()->paginate(6);
+		}
+		
+		return view('frontView.home.home')->with(['data'=>$data,'by'=>$by]);
 	}
 	
 	public function users_info()
@@ -48,8 +67,10 @@ class FrontViewController extends Controller
     {
     	$data = Advertisementproparty::where([['aprove', '=', '1'],])->latest()->paginate(6);
 		//$data = Advertisementproparty::paginate(6);
+		
+		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->get()->sortByDesc('price');
         return view('frontView.home.home')->with(['data'=>$data]);
-       // echo $data;
+        //echo $data;
     }
     public function view_post($id){
 		$data = Advertisementproparty::where('id', $id )->get();
