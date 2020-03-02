@@ -135,8 +135,78 @@
 <!--RESULT SECTION START-->
 		<section class="result">
 			<div class="container">
+				<h3>Recent Posts</h3>
 				<div class="row">
 					@foreach($data as $row)
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="single-result">
+							<div class="single-result-img">
+								<img src="{{ asset('assets/img/'.$row->featureimg) }}" alt="" />
+								<!--<div class="view-count">
+									<p>{{$row->view_count}}<i class="fas fa-eye"></i></p>
+								</div>-->
+							</div>
+							<div class="house-info">
+								<div class="row">
+									<div class="col-lg-8 col-sm-6">
+										<div class="house-info-left">
+											<h3>{{$row->title}}</h3>
+											<p><i>{{$row->location}}</i>, {{$row->city}}</p>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-6">
+										<div class="house-info-right">
+											<h3><span>&#2547; {{$row->price}}</span></h3>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-9">
+										<div class="info-btm">
+											<h1>{{$row->bedroom}}</h1>
+											<p>beds</p>
+										</div>
+										<div class="info-btm">
+											<h1>{{$row->bathroom}}</h1>
+											<p>baths</p>
+										</div>
+										<div class="info-btm">
+											<h1>{{$row->view_count}}</h1>
+											<p><i class="fas fa-eye"></i></p>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div class="info-btm-right">
+											<a class="border-btn" href="{{url('/view_post',$row->id) }}">details</a>
+										</div>
+									</div>
+									<div class="col-lg-12 col-sm-6">
+										<div class="create_at">
+											<p>Post created at : {{date('F d, Y',strtotime($row->created_at))}} at {{date('g:ia ',strtotime($row->created_at))}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					@endforeach
+				</div>
+				<!-- Pagination link is there-->
+				<div class="pagination d-flex justify-content-center">
+					<div class="row">
+						<div class="col-6">
+							<p class="" style="color:blue;text-align:center;">	{{ $data->links() }} </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="result">
+			<div class="container">
+				<h3>Most Viewed Posts</h3>
+				<div class="row">
+					@foreach($mostview as $row)
 					<div class="col-lg-4 col-md-6 col-sm-12">
 						<div class="single-result">
 							<div class="single-result-img">

@@ -17,23 +17,27 @@ class FrontViewController extends Controller
 		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'desc')->paginate(1);
 		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(1)->sortByDesc('price');
     	$data = Advertisementproparty::where([['aprove', '=', '1'],])->latest()->paginate(6);
+    	$mostview = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('view_count', 'desc')->paginate(6);
 		//echo $data;
-		return view('frontView.home.home')->with(['data'=>$data]);
+		return view('frontView.home.home')->with(['data'=>$data,'mostview'=>$mostview]);
 	}
 	
 	//sort
 	public function sorted_by($by){
 		if($by == 'ltoh'){
 			$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'asc')->paginate(6);
+			$mostview = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('view_count', 'desc')->paginate(6);
 		}
 		elseif($by == 'htol'){
 			$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'desc')->paginate(6);
+			$mostview = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('view_count', 'desc')->paginate(6);
 		}
 		else{
 			$data = Advertisementproparty::where([['aprove', '=', '1'],])->latest()->paginate(6);
+			$mostview = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('view_count', 'desc')->paginate(6);
 		}
 		
-		return view('frontView.home.home')->with(['data'=>$data,'by'=>$by]);
+		return view('frontView.home.home')->with(['data'=>$data,'by'=>$by,'mostview'=>$mostview]);
 	}
 	
 	public function users_info()
