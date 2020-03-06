@@ -35,6 +35,7 @@ class CreateAdvertisementpropartiesTable extends Migration
             $table->unsignedBigInteger('addid')->nullable();
             $table->foreign('addid')->references('id')->on('users');
             $table->integer('aprove')->nullable();
+            $table->integer('visibility')->default(1);
             $table->timestamps();
         });
     }

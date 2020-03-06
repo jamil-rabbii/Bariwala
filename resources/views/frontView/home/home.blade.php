@@ -57,13 +57,19 @@
 														<input type="text" class="form-control" id="city" name="city">
 													</div>
 												</div>
-												<div class="col-lg-3 clo-md-3 col-sm-12">
+												<div class="col-lg-2 clo-md-2 col-sm-12">
+													<div class="form-group">
+														<label for="max_price">MIN PRICE</label>
+														<input type="int" class="form-control" id="min_price" name="min_price">
+													</div>
+												</div>
+												<div class="col-lg-2 clo-md-2 col-sm-12">
 													<div class="form-group">
 														<label for="max_price">MAX PRICE</label>
 														<input type="int" class="form-control" id="max_price" name="max_price">
 													</div>
 												</div>
-												<div class="col-lg-3 clo-md-3 col-sm-12">
+												<div class="col-lg-2 clo-md-2 col-sm-12">
 													<div class="form-group">
 														<label for="bedrooms">ROOMS</label>
 														<input type="int" class="form-control" id="bedrooms" name="bedrooms">

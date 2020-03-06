@@ -65,6 +65,11 @@
 											<td>
 												<div class="user-post-table-link">
 													<a class="text-warning" href="{{url('/view_post',$row->id) }}"><i class="fa fa-eye" aria-hidden="true"></i>View</a>
+													@if($row->visibility == 1)
+													<a class="text-success" href="{{url('/user_invisible_post',$row->id) }}"><i class="fa fa-eye" aria-hidden="true"></i>Invisible</a>
+													@else
+													<a class="text-success" href="{{url('/user_visible_post',$row->id) }}"><i class="fa fa-eye" aria-hidden="true"></i>Visible</a>
+													@endif
 													<a class="text-danger" href="{{url('/user_del_post',$row->id) }}"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
 												</div>
 											</td>
