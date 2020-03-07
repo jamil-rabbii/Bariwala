@@ -40,7 +40,7 @@
 										<div class="user-own-info">
 											@if(count($errors) >0)
 														<div class="alert alert-danger alert-dismissable fade show" role="alert">
-															Image validation error <br><br>
+															Validation error <br><br>
 															 <button type="button" class="close" data-dismiss="alert" aria-label="close" ><span aria-hidden="true">&times;</span>
                                    								 </button>
 															<ul>
@@ -54,6 +54,7 @@
 											<img src="{{ asset('assets/img/upload/profile/'.Auth::user()->avatar)}}" class="rounded mx-auto d-block" alt="" />
 											<p><b>name :</b>{{ Auth::user()->name }}</p>
 											<p><b>email :</b>{{ Auth::user()->email }}</p>
+											<p><b>phone :</b>{{ Auth::user()->phone }}</p>
 											<p><b>age :</b>{{ Auth::user()->age }}</p>
 											<p><b>gender :</b>{{ Auth::user()->gender }}</p>
 											<!-- Button trigger modal -->
@@ -85,6 +86,12 @@
 															<label class="control-label col-md-2" for="email">Name:</label>
 															<div class="col-md-10">
 															  <input type="text" class="form-control-sm" id="name" name="username" value="{{Auth::user()->name }}">
+															</div>
+														  </div>
+														  <div class="form-group row">
+															<label class="control-label col-md-2" for="email">Phone:</label>
+															<div class="col-md-10">
+															  <input type="number" class="form-control-sm" id="name" name="phone" value="{{Auth::user()->phone }}">
 															</div>
 														  </div>
 														  <div class="form-group row">

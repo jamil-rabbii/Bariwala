@@ -127,6 +127,7 @@
 							@foreach($user_id as $user_info)
 							<img src="{{ asset('assets/img/upload/profile/'.$user_info->avatar)}}" alt="" />
 							<h3>{{$user_info->name}}</h3>
+							<a href="#"><i></i>{{$user_info->phone}}</a><br>
 							<a href="#"><i></i>{{$user_info->email}}</a>
 							@endforeach
 						@endif

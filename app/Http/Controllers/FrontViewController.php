@@ -17,7 +17,7 @@ class FrontViewController extends Controller
 		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('price', 'desc')->paginate(1);
 		//$data = Advertisementproparty::where([['aprove', '=', '1'],])->paginate(1)->sortByDesc('price');
     	$data = Advertisementproparty::where([['aprove', '=', '1'],['visibility', '=', '1']])->latest()->paginate(6);
-    	$mostview = Advertisementproparty::where([['aprove', '=', '1'],])->orderBy('view_count', 'desc')->paginate(6);
+    	$mostview = Advertisementproparty::where([['aprove', '=', '1'],['visibility', '=', '1']])->orderBy('view_count', 'desc')->paginate(6);
 		//echo $data;
 		return view('frontView.home.home')->with(['data'=>$data,'mostview'=>$mostview]);
 	}

@@ -199,6 +199,11 @@ class UsersActionController extends Controller
                     $request->avatar->move('assets/img/upload/profile',$filename);
             }
         $table->gender = $request->gender;
+
+        	$this->validate($request,[
+                'phone' => 'size:11|regex:/(01)[0-9]{9}/'             
+            ]);	
+        $table->phone = $request->phone;
         $table->save();
         return redirect()->back();
 

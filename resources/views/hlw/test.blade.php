@@ -1,5 +1,26 @@
-3aaaaaaafjhhkkkkkjkkhjhjgfgfgfgaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+regular expression 1:
 
-hihihihihihih
+/(^(\+88|0088)?(01){1}[3456789]{1}(\d){8})$/
+regular expression 2
 
-hlw botli...
+ /(^(\+8801|8801|01|008801))[1|3-9]{1}(\d){8}$/
+regular expression 3
+
+ (^([+]{1}[8]{2}|0088)?(01){1}[3-9]{1}\d{8})$
+Allowed mobile number sample
+
++8801812598624
+
+008801812598624
+
+01812598624
+
+01712598624
+
+01672598624
+
+01919598624
+
+01419598624
+
+01319598624
