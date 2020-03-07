@@ -185,7 +185,7 @@
 			</div>
 		</div>
 		<!-- Comment sec start -->
-<!--		<div class="comment-area">
+		<div class="comment-area">
 			<div class="container">
 				<div class="panel-group">
 					<div class="panel panel-default">
@@ -195,7 +195,7 @@
 						  </h4>
 						</div>
 						<!-- comment reply -->
-	<!--					<div id="collapse1" class="panel-collapse collapse">
+						<div id="collapse1" class="panel-collapse collapse">
 							<ul class="list-group">
 							@foreach($comment as $comments)
 							@if($comments->ref_id == NULL)
@@ -225,7 +225,7 @@
 												<a style="display:none;" class="hide-reply" data-toggle="collapse" href="#collapse2">hide replies<i class="fa fa-caret-up" aria-hidden="true"></i></a>
 												
 												<!-- Modal -->
-	<!--											<div class="modal fade" id="{{ 'id'.$comments->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+												<div class="modal fade" id="{{ 'id'.$comments->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 												  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 													<div class="modal-content">
 													  <div class="modal-header">
@@ -263,7 +263,7 @@
 												<!-- modal end -->
 												
 												
-	<!--										</div>
+											</div>
 										</div>
 									</div>
 									<div id="{{ $comments->id }}" class="panel-collapse collapse">
@@ -294,7 +294,7 @@
 															@endguest
 																<p class="float-right">{{ $comments->updated_at }}</p>
 															<!-- Modal -->
-	<!--															<div class="modal fade" id="{{ 'colid'.$replies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+																<div class="modal fade" id="{{ 'colid'.$replies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 																  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 																	<div class="modal-content">
 																	  <div class="modal-header">
@@ -330,7 +330,7 @@
 																  </div>
 																</div>
 																<!-- modal end -->
-	<!--														</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -378,7 +378,7 @@
 						</div>
 						</div>
 						<!-- comment reply end -->
-	<!--				  </div>
+					  </div>
 					</div>
 			</div>
 		</div>

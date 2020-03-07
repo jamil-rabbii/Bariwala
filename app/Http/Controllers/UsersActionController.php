@@ -85,18 +85,70 @@ class UsersActionController extends Controller
 	public function users_search_result(Request $request)
     {
 		$city = $request->city;
-		$max_price = $request->max_price;
-		$bedrooms = $request->bedrooms;
+		if($request->min_price != NULL){
+			$min_price = $request->min_price;
+		}
+		if($request->max_price != NULL){
+			$max_price = $request->max_price;
+		}
+		if($request->bedrooms != NULL){
+			$bedrooms = $request->bedrooms;
+		}
 		$searching_for = $request->searching_for;
 
 
-         $data = Advertisementproparty::where([['city', '=', $city],['price', '<=', $max_price],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],['aprove', '=', '1']])->get();
-        return view('users_search_result')->with(['data'=>$data]);
+        if($request->min_price == NULL && $request->max_price == NULL && $request->bedrooms == NULL){
+			$data = Advertisementproparty::where([['city', '=', $city],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])->get();
+		}
+		elseif($request->min_price == NULL && $request->max_price == NULL){
+			$data = Advertisementproparty::where([['city', '=', $city],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])->get();
+		}
+		elseif($request->min_price == NULL && $request->bedrooms == NULL){
+			$data = Advertisementproparty::where([['city', '=', $city],['price', '<=', $max_price],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])->get();
+		}
+		elseif($request->max_price == NULL && $request->bedrooms == NULL){
+			$data = Advertisementproparty::where([['city', '=', $city],['price', '>=', $min_price],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])->get();
+		}
+		elseif($request->min_price == NULL){
+			$data = Advertisementproparty::where([['city', '=', $city],['price', '<=', $max_price],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])->get();
+		}
+		elseif($request->max_price == NULL){
+			$data = Advertisementproparty::where([['city', '=', $city],['price', '>=', $min_price],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])->get();
+		}
+		elseif($request->bedrooms == NULL){
+		$data = Advertisementproparty::where([['city', '=', $city],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])
+		 ->whereBetween('price', [$min_price, $max_price])->get();
+		}
+		else{
+		$data = Advertisementproparty::where([['city', '=', $city],['room', '>=', $bedrooms],['rentfor', '=', $searching_for],['aprove', '=', '1'],['visibility', '=', '1']])
+		 ->whereBetween('price', [$min_price, $max_price])->get();
+		}
+        //echo $data;
+		return view('users_search_result')->with(['data'=>$data]);
         //echo $data;
 		//echo $city,$max_price,$bedrooms,$searching_for;
         //return view('users_search_result');
     }
 	
+	
+	//Invisible post
+	public function user_invisible_post($id)
+    {
+		$table = Advertisementproparty::find($id);
+		$table->visibility = '0';
+        $table->save();
+        return redirect()->back();
+	}
+	
+	
+	//Visible post
+	public function user_visible_post($id)
+    {
+		$table = Advertisementproparty::find($id);
+		$table->visibility = '1';
+        $table->save();
+        return redirect()->back();
+	}
 	
 	//delete own post
 	public function user_del_post($id)

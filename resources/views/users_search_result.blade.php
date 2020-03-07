@@ -36,6 +36,9 @@
 				</div>
 			</div>
 		</div>
+		@if($data == [])
+			<h1 class="pt-200 pb-200">Opps...  There is no data :(</h1>
+		@endif
 		<section class="result">
 			<div class="container">
 				<div class="row">
