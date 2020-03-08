@@ -25,6 +25,10 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"/>
 		<!--Responsive CSS-->
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}"/>
+		<!--
+		 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> 
+		 -->
+		
 	</head>
 	<body>
 	

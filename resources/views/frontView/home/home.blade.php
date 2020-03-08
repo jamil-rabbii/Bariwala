@@ -327,7 +327,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<img class="rounded mx-auto d-block" src="assets/img/Screenshot_2020-01-25 Landload(6).png" alt="logo" />
+						<img class="rounded mx-auto d-block" src="{{ asset('assets/img/Screenshot_2020-01-25 Landload(6).png') }}" alt="logo" />
 						<p>Bariwala is made for give rent and find rental houses faster, easier and customized for you.</p>
 						<div class="social-link">
 							
@@ -339,13 +339,17 @@
 @endsection
 
 @section('js_script')
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/js/main.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/wow.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-		<script type="text/javascript" src="assets/js/typed.js"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/typed.js') }}"></script>
+		<!--
+		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>  -->
 		
 		<script type="text/javascript">
 			//type	  
@@ -365,4 +369,17 @@
 			  });
 			});
 		</script>
+<!--
+		<script type="text/javascript">
+		    var path = "{{ url('search') }}";
+		    $('#city').typeahead({
+		         minLength: 2,
+		        source:  function (query, process) {
+		        return $.get(path, { query: query }, function (data) {
+		                return process(data);
+		            });
+		        }
+		    });
+		</script>
+	-->
 @endsection

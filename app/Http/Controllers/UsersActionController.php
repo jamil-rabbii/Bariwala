@@ -201,7 +201,7 @@ class UsersActionController extends Controller
         $table->gender = $request->gender;
 
         	$this->validate($request,[
-                'phone' => 'size:11|regex:/(01)[0-9]{9}/'             
+                'phone' => 'size:11|regex:/(01)[0-9]{9}/|not_regex:/[a-z]/'             
             ]);	
         $table->phone = $request->phone;
         $table->save();
@@ -267,5 +267,11 @@ class UsersActionController extends Controller
 		}
 		return redirect()->back();
 	}
+	/*
+	public function result(Request  $request)
+    {
+        $result=\App\Advertisementproparty::where('city', 'LIKE', "%{$request->input('query')}%")->get();
+        return response()->json($result);
+    }*/
 }
 
