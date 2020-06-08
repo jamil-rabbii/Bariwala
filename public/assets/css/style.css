@@ -262,6 +262,58 @@ span {
 	padding: 20px 0 0 0;
 	background-color: #F6F6F6;
 }
+.result2 {
+	position: relative;
+	padding-top: 50px;
+}
+.result2::before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #aeadad;
+	left: 50%;
+	top: -10px;
+	transform: rotate(45deg);
+	margin-left: -10px;
+}
+.result2::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #aeadad;
+	left: 0;
+	top: 0;
+}
+.post-status{
+	margin: 20px 0;
+}
+.post-status h2 {
+	text-align: center;
+	font-size: 28px;
+	position: relative;
+}
+.post-status h2::before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-color: #FF9D00;
+	left: 40%;
+	bottom: 8px;
+	transform: rotate(45deg);
+}
+.post-status h2::after {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-color: #FF9D00;
+	right: 40%;
+	bottom: 8px;
+	transform: rotate(45deg);
+}
 .single-result{
 	background-color: white;
 	margin: 10px 0;

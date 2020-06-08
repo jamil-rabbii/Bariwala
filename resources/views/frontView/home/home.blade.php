@@ -141,7 +141,13 @@
 <!--RESULT SECTION START-->
 		<section class="result">
 			<div class="container">
-				<h3>Recent Posts</h3>
+				<div class="row">
+					<div class="col-12">
+						<div class="post-status">
+							<h2>Recent Posts</h2>
+						</div>
+					</div>
+				</div>
 				<div class="row">
 					@foreach($data as $row)
 					<div class="col-lg-4 col-md-6 col-sm-12">
@@ -208,9 +214,15 @@
 			</div>
 		</section>
 
-		<section class="result">
+		<section class="result result2">
 			<div class="container">
-				<h3>Most Viewed Posts</h3>
+				<div class="row">
+					<div class="col-12">
+						<div class="post-status">
+							<h2>Popular Posts</h2>
+						</div>
+					</div>
+				</div>
 				<div class="row">
 					@foreach($mostview as $row)
 					<div class="col-lg-4 col-md-6 col-sm-12">

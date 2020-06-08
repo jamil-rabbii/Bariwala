@@ -67,17 +67,23 @@ class AdminActionController extends Controller
 	//Delete User
 	public function del_user($id)
     {
-		$table = Auth::user()::find($id);
-		echo $table->name;
+		$data = Auth::user()::find($id);
+		echo $data->name;
+		echo "hfvefurvfu";
+		echo $data;
 		
-		if($table->avatar!='default.jpg'){
-			$file = public_path('assets/img/upload/profile/'.$table->avatar);
+		if($data->avatar!='default.jpg'){
+			$file = public_path('assets/img/upload/profile/'.$data->avatar);
 				if(file_exists($file)){
 					unlink($file);
 				}
 		}
-		
-		$table->delete();
+		//$table = Advertisementproparty::where('addid', $data->id)->get();
+		//$table->delete();
+		$table=Advertisementproparty::where('addid',$data->id)->delete();
+		echo $table;
+		//$table -> delete();
+		$data->delete();
         return redirect()->back();
     }
    
