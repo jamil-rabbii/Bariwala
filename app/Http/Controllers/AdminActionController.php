@@ -20,7 +20,7 @@ class AdminActionController extends Controller
 		$all_post_count = $this->all_admin_data('all_post');
 		$user_count = $this->all_admin_data('user');
 		$admin_count = $this->all_admin_data('admin');
-		if(Auth::user()->admin_ship==1){
+		if(Auth::user()->admin_ship==1 || Auth::user()->admin_ship==2){
 			return view('admin_layouts.pending_post')->with(['pending'=>$pending,'pending_count'=>$pending_count,'all_post_count'=>$all_post_count,'user_count'=>$user_count,'admin_count'=>$admin_count]);
 		}
 		else{
@@ -108,7 +108,7 @@ class AdminActionController extends Controller
 	//See All Admin
 	public function see_alladmin()
     {
-		$admins = Auth::user()::where('admin_ship', '1' )->get();
+		$admins = Auth::user()::where('admin_ship', '1' )->orWhere('admin_ship', '2' )->get();
         
 		$pending_count = $this->all_admin_data('pending');
 		$all_post_count = $this->all_admin_data('all_post');
@@ -130,7 +130,9 @@ class AdminActionController extends Controller
 		$pending = COUNT(Advertisementproparty::where([['aprove', '=', NULL],])->get());
 		$all_post = COUNT(Advertisementproparty::where([['aprove', '=', '1'],])->get());
 		$users = COUNT(Auth::user()::all());
-		$admins = COUNT(Auth::user()::where('admin_ship', '1' )->get());
+		$admins = COUNT(Auth::user()::where('admin_ship', '1')->get());
+		//$s_admin = COUNT(Auth::user()::where('admin_ship', '2')->get());
+		//$admins = $n_admin + $s_admin;
 		
 		if($a == 'pending'){
 			return $pending;

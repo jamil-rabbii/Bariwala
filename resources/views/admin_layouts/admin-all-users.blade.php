@@ -50,9 +50,13 @@
 												  <td>{{$row->email}}</td>
 												  <td>{{$row->age}}</td>
 												  <td>
-													<a href="{{url('/admin/del_user',$row->id) }}" class="btn btn-danger">Delete</a>
-													@if($row->admin_ship!=1)
-													<a href="{{url('/admin/make_admin',$row->id) }}" class="btn btn-info">Make Admin</a>
+													@if($row->admin_ship!=2)
+													<a onclick="myFunction()" href="{{url('/admin/del_user',$row->id) }}" class="btn btn-danger">Delete</a>
+													@endif
+													@if($row->admin_ship==1)
+													@elseif($row->admin_ship==2)
+													@else
+													<a onclick="myFunction()" href="{{url('/admin/make_admin',$row->id) }}" class="btn btn-info">Make Admin</a>
 													@endif
 												  </td>
 												</tr>
@@ -68,4 +72,9 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			function myFunction() {
+				window.alert('Are you sure ?');
+			}
+		</script>
 @endsection

@@ -6,7 +6,7 @@
 									<li><a href="/user/add_property">advertise home</a></li>
 									<li><a href="/user/own_post">my posts</a></li>
 									<li><a href="/user/bookmark">bookmark listing</a></li>
-									@if(Auth::user()->admin_ship==1)
+									@if(Auth::user()->admin_ship==1 || Auth::user()->admin_ship==2)
 									<li><a href="/Admin/pending_post">admin mode</a></li>
 									@endif
 								</ul>
