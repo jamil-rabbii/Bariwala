@@ -50,7 +50,10 @@
 												  <td>{{$row->email}}</td>
 												  <td>{{$row->age}}</td>
 												  <td>
-													<a href="{{url('/admin/remove_admin',$row->id) }}" class="btn btn-danger">remove</a>
+													@if($row->admin_ship == 2)
+													@else
+													<a onclick="myFunction()" href="{{url('/admin/remove_admin',$row->id) }}" class="btn btn-danger">remove</a>
+													@endif
 												  </td>
 												</tr>
 											  @endforeach
@@ -66,4 +69,10 @@
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/javascript">
+			function myFunction() {
+				window.alert('Are you sure ?');
+			}
+		</script>
 @endsection
