@@ -51,12 +51,67 @@
 												  <td>{{$row->age}}</td>
 												  <td>
 													@if($row->admin_ship!=2)
-													<a onclick="myFunction()" href="{{url('/admin/del_user',$row->id) }}" class="btn btn-danger">Delete</a>
+													
+													<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModel-{{$row->id}}">
+										Delete
+									</a>
+									<div class="modal fade" id="delModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="text-success">Delete Confirmation...</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<form action="{{url('/admin/del_user',$row->id) }}" id="delForm" method="get" enctype="multipart/form-data">
+													{{csrf_field()}}
+													<input type="hidden" name="id">
+													<div class="modal-body">
+														<div class="text-danger">
+															<p>Are you sure you want to delete this user? </p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+															<button type="submit" class="btn btn-sm btn-primary">Delete</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+													<!--<a onclick="myFunction()" href="{{url('/admin/del_user',$row->id) }}" class="btn btn-danger">Delete</a>-->
 													@endif
 													@if($row->admin_ship==1)
 													@elseif($row->admin_ship==2)
 													@else
-													<a onclick="myFunction()" href="{{url('/admin/make_admin',$row->id) }}" class="btn btn-info">Make Admin</a>
+													
+											<a type="button" class="btn btn-info" data-toggle="modal" data-target="#adminModel-{{$row->id}}">
+										Make Admin
+									</a>
+									<div class="modal fade" id="adminModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="text-success">Make Admin...</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<form action="{{url('/admin/make_admin',$row->id) }}" id="delForm" method="get" enctype="multipart/form-data">
+													{{csrf_field()}}
+													<input type="hidden" name="id">
+													<div class="modal-body">
+														<div class="text-danger">
+															<p>Are you sure you want to change the user role? </p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+															<button type="submit" class="btn btn-sm btn-primary">Yes</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
 													@endif
 												  </td>
 												</tr>
@@ -72,9 +127,5 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-			function myFunction() {
-				window.alert('Are you sure ?');
-			}
-		</script>
+		
 @endsection

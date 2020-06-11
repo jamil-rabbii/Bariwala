@@ -52,7 +52,32 @@
 												  <td>
 													@if($row->admin_ship == 2)
 													@else
-													<a onclick="myFunction()" href="{{url('/admin/remove_admin',$row->id) }}" class="btn btn-danger">remove</a>
+													<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#revModel-{{$row->id}}">
+										Remove
+									</a>
+									<div class="modal fade" id="revModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="text-success">Remove from admin...</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<form action="{{url('/admin/remove_admin',$row->id) }}" id="delForm" method="get" enctype="multipart/form-data">
+													{{csrf_field()}}
+													<input type="hidden" name="id">
+													<div class="modal-body">
+														<div class="text-danger">
+															<p>Are you sure you want to remove this admin? </p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+															<button type="submit" class="btn btn-sm btn-primary">remove</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
 													@endif
 												  </td>
 												</tr>

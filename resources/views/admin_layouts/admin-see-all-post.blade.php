@@ -49,7 +49,32 @@
 											</td>
 											<td  class="d-flex flex-column bd-highlight">
 												<a href="{{url('/view_post',$row->id) }}" class="btn btn-sm btn-info mb-1">view</a>
-												<a href="{{url('/user_del_post',$row->id) }}" class="btn btn-sm btn-danger">delete</a>
+												<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModel-{{$row->id}}">
+										Delete
+									</a>
+									<div class="modal fade" id="delModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="text-success">This Post can't be recoverd if you delete this...</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<form action="{{url('/user_del_post',$row->id) }}" id="delForm" method="get" enctype="multipart/form-data">
+													{{csrf_field()}}
+													<input type="hidden" name="id">
+													<div class="modal-body">
+														<div class="text-danger">
+															<p>Are you sure you want to delete this post? </p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+															<button type="submit" class="btn btn-sm btn-primary">Delete</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
 											</td>
 										</tr>
 									@endforeach
