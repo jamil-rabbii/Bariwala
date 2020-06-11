@@ -56,19 +56,19 @@
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h4 class="text-success">This Post can't be recoverd if you delete this...</h4>
+													<h4 class="">This Post can't be recoverd if you delete this...</h4>
 													<button type="button" class="close" data-dismiss="modal">&times;</button>
 												</div>
 												<form action="{{url('/user_del_post',$row->id) }}" id="delForm" method="get" enctype="multipart/form-data">
 													{{csrf_field()}}
 													<input type="hidden" name="id">
 													<div class="modal-body">
-														<div class="text-danger">
+														<div class="">
 															<p>Are you sure you want to delete this post? </p>
 														</div>
 														<div class="modal-footer">
 															<button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-															<button type="submit" class="btn btn-sm btn-primary">Delete</button>
+															<button type="submit" class="btn btn-sm btn-danger">Delete</button>
 														</div>
 													</form>
 												</div>
