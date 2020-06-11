@@ -160,8 +160,11 @@ class UsersActionController extends Controller
                 unlink($file);
             }
             // previous file delete
+		
+		$post_commenst=Post_Comment::where('post_id',$data->id)->delete();
+		//$post_commenst -> delete();
+		print $post_commenst;
         $data->delete();
-
         return redirect()->back();
 	}
 /*
