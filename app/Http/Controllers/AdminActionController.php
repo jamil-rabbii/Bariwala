@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Advertisementproparty;
 use App\Userbookmark;
+use App\Post_Comment;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -70,7 +71,7 @@ class AdminActionController extends Controller
 		$data = Auth::user()::find($id);
 		echo $data->name;
 		echo "hfvefurvfu";
-		echo $data;
+		//echo $data;
 		
 		if($data->avatar!='default.jpg'){
 			$file = public_path('assets/img/upload/profile/'.$data->avatar);
@@ -78,11 +79,12 @@ class AdminActionController extends Controller
 					unlink($file);
 				}
 		}
-		//$table = Advertisementproparty::where('addid', $data->id)->get();
-		//$table->delete();
+		$table=Advertisementproparty::where('addid',$data->id)->get();
+		foreach ($table as $tables) {
+			$users_comment=Post_Comment::where('post_id',$tables->id)->delete();
+		}
 		$table=Advertisementproparty::where('addid',$data->id)->delete();
-		echo $table;
-		//$table -> delete();
+		$users_comment=Post_Comment::where('user_id',$data->id)->delete();
 		$data->delete();
         return redirect()->back();
     }
