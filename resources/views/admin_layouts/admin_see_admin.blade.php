@@ -52,9 +52,9 @@
 												  <td>
 													@if($row->admin_ship == 2)
 													@else
-													<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#revModel-{{$row->id}}">
+													<button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#revModel-{{$row->id}}">
 										Remove
-									</a>
+									</button >
 									<div class="modal fade" id="revModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">

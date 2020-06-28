@@ -49,9 +49,9 @@
 											</td>
 											<td  class="d-flex flex-column bd-highlight">
 												<a href="{{url('/view_post',$row->id) }}" class="btn btn-sm btn-info mb-1">view</a>
-												<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModel-{{$row->id}}">
+												<button  type="button" class="btn btn-danger" style="colour:white;" data-toggle="modal" data-target="#delModel-{{$row->id}}">
 										Delete
-									</a>
+									</button >
 									<div class="modal fade" id="delModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
