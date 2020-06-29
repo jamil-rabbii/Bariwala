@@ -52,9 +52,9 @@
 												  <td>
 													@if($row->admin_ship!=2)
 													
-													<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModel-{{$row->id}}">
+													<button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModel-{{$row->id}}">
 										Delete
-									</a>
+									</button >
 									<div class="modal fade" id="delModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
@@ -86,9 +86,9 @@
 													@elseif($row->admin_ship==2)
 													@else
 													
-											<a type="button" class="btn btn-info" data-toggle="modal" data-target="#adminModel-{{$row->id}}">
+											<button  type="button" class="btn btn-info" data-toggle="modal" data-target="#adminModel-{{$row->id}}">
 										Make Admin
-									</a>
+									</button >
 									<div class="modal fade" id="adminModel-{{$row->id}}"  role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">

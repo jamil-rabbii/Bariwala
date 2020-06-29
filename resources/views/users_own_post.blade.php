@@ -40,7 +40,7 @@
 									<thead class="bg-danger text-white">
 										<tr>
 											<th colspan="2"><i class="fa fa-home" aria-hidden="true"></i>My property</th>
-											<th scope="col"><i class="fa fa-calendar-o" aria-hidden="true"></i>Expiration Date</th>
+											<th scope="col"><i class="fa fa-calendar-o" aria-hidden="true"></i>Status</th>
 											<th scope="col"></th>
 										</tr>
 									</thead>
@@ -59,7 +59,11 @@
 											</td>
 											<td>
 												<div class="ex-date">
-													<p>18 January, 2020</p>
+												@if($row->aprove == 1)
+													<p class="text-success text-center">Aproved</p>
+												@else
+													<p class="text-danger text-center">Pending</p>
+												@endif
 												</div>
 											</td>
 											<td>
